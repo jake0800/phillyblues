@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Philly Blues — Chelsea FC Supporters Group, Philadelphia</title>
+<meta name="description" content="The Philly Blues are an official Platinum Tier Chelsea Football Club supporters group in Philadelphia. New home for 2026/27: Cavanaugh's Rittenhouse, 1913 Sansom St.">
+
+<!-- ===================================================================== -->
+<!-- TEST DEPLOY ONLY. DELETE THE NEXT LINE BEFORE CONNECTING THE DOMAIN.  -->
+<!-- It tells search engines not to index the page. Leaving it in means    -->
+<!-- the real site will never show up in Google.                           -->
+<!-- ===================================================================== -->
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Open Graph: controls how the link looks when shared to Facebook / WhatsApp / iMessage -->
+<meta property="og:title" content="Philly Blues — New home for 2026/27">
+<meta property="og:description" content="We've moved to Cavanaugh's Rittenhouse. First match Monday 24 August, Fulham v Chelsea, 3:00 PM ET.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.phillybluescfc.com/">
+<meta property="og:image" content="https://www.phillybluescfc.com/assets/crest-512.png">
+<link rel="icon" href="assets/crest-512.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#034694;
+  --navy-deep:#011E3C;
+  --navy-mid:#022f68;
+  --chelsea-blue:#001489;
+  --gold:#C7A052;
+  --gold-bright:#E3BE6B;
+  --paper:#EEF1F5;
+  --paper-warm:#E3E8EE;
+  --ink:#0B1119;
+  --red:#C8102E;
+  --rule:rgba(199,160,82,.35);
+
+  --display:'Anton',Impact,sans-serif;
+  --body:'Archivo',system-ui,-apple-system,sans-serif;
+  --data:'JetBrains Mono',ui-monospace,monospace;
+
+  --wrap:1180px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{width:min(var(--wrap),100% - 2.5rem);margin-inline:auto}
+
+/* ---------- shared type devices ---------- */
+.eyebrow{
+  font-family:var(--data);
+  font-size:.7rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+.rule-label{
+  display:flex;align-items:center;gap:1rem;
+  font-family:var(--data);font-size:.7rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--navy);font-weight:700;
+  margin:0 0 2.25rem;
+}
+.rule-label::after{content:"";flex:1;height:1px;background:var(--rule)}
+
+h2{
+  font-family:var(--display);
+  font-size:clamp(2.1rem,5vw,3.4rem);
+  line-height:.98;
+  letter-spacing:.005em;
+  text-transform:uppercase;
+  margin:0 0 1.1rem;
+  color:var(--navy-deep);
+}
+h3{font-size:1.05rem;font-weight:700;margin:0 0 .5rem;letter-spacing:-.01em}
+p{margin:0 0 1rem;max-width:62ch}
+a{color:var(--navy)}
+
+:focus-visible{outline:3px solid var(--gold-bright);outline-offset:3px;border-radius:2px}
+
+/* ---------- nav ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:var(--navy-deep);
+  border-bottom:1px solid rgba(199,160,82,.3);
+}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.brand img{width:34px;height:34px}
+.brand span{
+  font-family:var(--display);color:#fff;font-size:1.32rem;
+  letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;
+}
+nav{display:flex;align-items:center;gap:1.6rem}
+nav a{
+  color:rgba(255,255,255,.82);text-decoration:none;
+  font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  white-space:nowrap;transition:color .18s;
+}
+nav a:hover{color:var(--gold-bright)}
+nav a.join{
+  border:1px solid var(--gold);color:var(--gold-bright);padding:.42rem .85rem;
+}
+nav a.join:hover{background:var(--gold);color:var(--navy-deep)}
+@media(max-width:820px){nav{gap:1rem}nav .hide-sm{display:none}}
+@media(max-width:420px){.brand span{font-size:1.1rem}.brand img{width:28px;height:28px}}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  background:var(--navy-deep);
+  color:#fff;
+  padding:clamp(3.5rem,8vw,5.5rem) 0 clamp(9rem,16vw,12rem);
+}
+.hero .wrap{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1.35fr .65fr;
+  gap:clamp(2rem,5vw,4rem);align-items:center;
+}
+/* The crest is shown clean and unaltered — no opacity, no effects,
+   on a plain background, per Chelsea's OSC logo usage guidance. */
+.hero-crest{width:100%;max-width:400px;height:auto;justify-self:center}
+@media(max-width:860px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-crest{max-width:190px;justify-self:start;order:-1;margin-bottom:.5rem}
+}
+
+.flag{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:var(--red);color:#fff;
+  padding:.45rem .9rem;margin-bottom:1.9rem;
+}
+.flag .dot{width:6px;height:6px;background:#fff;border-radius:50%;
+  animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.28}}
+
+.hero-pre{
+  font-family:var(--display);
+  font-size:clamp(1.5rem,3.4vw,2.5rem);
+  line-height:1;text-transform:uppercase;letter-spacing:.02em;
+  color:rgba(255,255,255,.9);margin:0 0 .35rem;
+}
+.hero h1{
+  font-family:var(--display);
+  font-size:clamp(2.9rem,9.4vw,6.6rem);
+  line-height:.9;
+  text-transform:uppercase;
+  letter-spacing:.004em;
+  margin:0 0 1.5rem;
+  max-width:13ch;
+  color:var(--gold-bright);
+}
+.hero .kicker{
+  font-size:clamp(1rem,2vw,1.2rem);
+  color:rgba(255,255,255,.8);max-width:52ch;margin-bottom:2rem;
+}
+.addr{
+  font-family:var(--data);font-size:.86rem;letter-spacing:.04em;
+  color:var(--gold-bright);
+  border-left:2px solid var(--gold);padding-left:.95rem;line-height:1.75;
+}
+
+/* ---------- signature: the matchday card ---------- */
+.fixture-zone{background:var(--paper);position:relative}
+.fixture{
+  background:#fff;
+  margin-top:clamp(-8rem,-11vw,-6rem);
+  border:1px solid rgba(3,70,148,.16);
+  box-shadow:0 24px 60px -28px rgba(1,30,60,.5);
+  position:relative;z-index:2;
+}
+.fixture-rail{
+  display:flex;flex-wrap:wrap;gap:.6rem 2rem;
+  background:var(--navy);color:#fff;
+  padding:.85rem 1.7rem;
+  font-family:var(--data);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;
+}
+.fixture-rail .sep{color:var(--gold-bright)}
+.fixture-body{
+  display:grid;grid-template-columns:1.5fr 1fr;gap:2.5rem;
+  padding:2.6rem 1.7rem 2.4rem;align-items:center;
+}
+@media(max-width:860px){.fixture-body{grid-template-columns:1fr;gap:1.8rem}}
+
+.tie{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
+.tie .team{
+  font-family:var(--display);
+  font-size:clamp(1.8rem,4.6vw,3.1rem);
+  line-height:1;text-transform:uppercase;color:var(--navy-deep);
+}
+.tie .team.home{color:rgba(11,17,25,.42)}
+.tie .v{
+  font-family:var(--data);font-size:.8rem;font-weight:700;
+  color:var(--gold);border:1px solid var(--gold);
+  width:2rem;height:2rem;display:grid;place-items:center;flex:none;
+}
+.tie-meta{
+  font-family:var(--data);font-size:.74rem;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(11,17,25,.55);
+  margin-top:.9rem;width:100%;
+}
+.kickoff{
+  border-left:3px solid var(--gold);padding-left:1.3rem;
+}
+.kickoff .t{
+  font-family:var(--display);font-size:clamp(2rem,4.6vw,2.9rem);
+  line-height:1;color:var(--navy);
+}
+.kickoff .d{
+  font-family:var(--data);font-size:.75rem;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(11,17,25,.6);margin-top:.5rem;
+}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-block;text-decoration:none;
+  font-family:var(--data);font-size:.76rem;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;
+  padding:.95rem 1.7rem;border:1px solid transparent;cursor:pointer;
+  transition:background .18s,color .18s,border-color .18s;
+}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-primary:hover{background:var(--navy-deep)}
+.btn-gold{background:var(--gold);color:var(--navy-deep)}
+.btn-gold:hover{background:var(--gold-bright)}
+.btn-ghost{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn-ghost:hover{background:var(--navy);color:#fff}
+
+/* ---------- sections ---------- */
+section{padding:clamp(3.5rem,7vw,5.5rem) 0}
+.two-col{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+@media(max-width:860px){.two-col{grid-template-columns:1fr}}
+
+.venue-card{
+  background:var(--navy-deep);color:#fff;padding:2.2rem 2rem;
+}
+.venue-card h3{color:var(--gold-bright);font-family:var(--data);
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.2rem}
+.venue-card dl{margin:0;display:grid;gap:1.15rem}
+.venue-card dt{
+  font-family:var(--data);font-size:.66rem;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.2rem;
+}
+.venue-card dd{margin:0;font-size:1rem;line-height:1.5}
+.venue-card a{color:var(--gold-bright)}
+
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  margin:2.5rem 0 0;
+}
+@media(max-width:680px){.stats{grid-template-columns:1fr;}
+  .stats .stat+.stat{border-top:1px solid var(--rule);border-left:0}}
+.stat{padding:1.6rem 1.4rem 1.6rem 0}
+.stat+.stat{border-left:1px solid var(--rule);padding-left:1.4rem}
+.stat .n{font-family:var(--display);font-size:2.5rem;line-height:1;color:var(--navy)}
+.stat .l{font-family:var(--data);font-size:.68rem;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(11,17,25,.6);margin-top:.5rem}
+
+/* membership */
+.membership{background:var(--navy-deep);color:#fff}
+.membership h2{color:#fff}
+.membership .rule-label{color:var(--gold-bright)}
+.membership .rule-label::after{background:rgba(199,160,82,.35)}
+.membership p{color:rgba(255,255,255,.78)}
+.alert{
+  border:1px solid var(--gold);border-left-width:4px;
+  padding:1.4rem 1.6rem;margin:0 0 2rem;background:rgba(199,160,82,.08);
+}
+.alert .eyebrow{color:var(--gold-bright);display:block;margin-bottom:.5rem}
+.alert p{color:#fff;margin:0;font-weight:500}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:1.4rem;counter-reset:s}
+.steps li{display:grid;grid-template-columns:auto 1fr;gap:1.1rem;align-items:start}
+.steps li::before{
+  counter-increment:s;content:counter(s,decimal-leading-zero);
+  font-family:var(--data);font-size:.72rem;font-weight:700;color:var(--gold-bright);
+  border:1px solid rgba(199,160,82,.5);width:2.1rem;height:2.1rem;
+  display:grid;place-items:center;
+}
+.steps strong{display:block;color:#fff;margin-bottom:.15rem}
+.steps span{color:rgba(255,255,255,.72);font-size:.95rem}
+
+/* join form */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+@media(max-width:560px){.form-grid{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.1rem}
+.field label{
+  font-family:var(--data);font-size:.68rem;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(11,17,25,.65);font-weight:700;
+}
+.field input,.field textarea{
+  font-family:var(--body);font-size:1rem;padding:.8rem .9rem;
+  border:1px solid rgba(3,70,148,.28);background:#fff;color:var(--ink);
+  transition:border-color .18s;
+}
+.field input:focus,.field textarea:focus{border-color:var(--navy)}
+.field textarea{min-height:120px;resize:vertical}
+.check{display:flex;gap:.7rem;align-items:flex-start;margin-bottom:1.5rem;font-size:.92rem}
+.check input{margin-top:.3rem;width:16px;height:16px;flex:none;accent-color:var(--navy)}
+
+/* Official Supporters Club badge — Chelsea-issued logo, shown unaltered on its
+   own Reflex Blue (#001489) so the artwork sits on a plain, matching field. */
+.osc-card{border:1px solid rgba(3,70,148,.16)}
+.osc-card img{display:block;width:100%;height:auto;background:var(--chelsea-blue)}
+.osc-card figcaption{
+  background:var(--chelsea-blue);color:rgba(255,255,255,.7);
+  font-family:var(--data);font-size:.66rem;letter-spacing:.14em;
+  text-transform:uppercase;padding:0 1.4rem 1.5rem;text-align:center;
+}
+
+/* home vs away ticket cards */
+.ticket-split{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem;
+}
+@media(max-width:860px){.ticket-split{grid-template-columns:1fr}}
+.ticket-card{
+  border:1px solid rgba(199,160,82,.35);
+  padding:1.8rem 1.7rem;
+  background:rgba(255,255,255,.035);
+}
+.ticket-card .eyebrow{color:var(--gold-bright);display:block;margin-bottom:.9rem}
+.ticket-card h3{
+  font-family:var(--display);font-size:1.6rem;line-height:1.05;
+  text-transform:uppercase;color:#fff;margin:0 0 1rem;letter-spacing:.01em;
+}
+.ticket-card p{color:rgba(255,255,255,.78);font-size:.97rem}
+.ticket-card ul{margin:1.1rem 0 0;padding:0;list-style:none}
+.ticket-card li{
+  color:rgba(255,255,255,.8);font-size:.93rem;line-height:1.45;
+  padding:.42rem 0 .42rem 1.4rem;position:relative;
+}
+.ticket-card li::before{
+  content:"";position:absolute;left:0;top:.95rem;
+  width:6px;height:1px;background:var(--gold);
+}
+.btn-ghost-light{border-color:var(--gold);color:var(--gold-bright);background:transparent}
+.btn-ghost-light:hover{background:var(--gold);color:var(--navy-deep)}
+
+/* photo placeholders — remove once real Cavanaugh's photos exist */
+.photo-slot{
+  aspect-ratio:4/3;background:var(--paper-warm);
+  border:1px dashed rgba(3,70,148,.3);
+  display:grid;place-items:center;text-align:center;padding:1rem;
+  font-family:var(--data);font-size:.68rem;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(3,70,148,.55);
+}
+.photo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+@media(max-width:680px){.photo-row{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:rgba(255,255,255,.62);padding:3.5rem 0 2.5rem;font-size:.92rem}
+footer .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem}
+@media(max-width:760px){footer .cols{grid-template-columns:1fr;gap:1.8rem}}
+footer h4{
+  font-family:var(--data);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 .8rem;
+}
+footer a{color:rgba(255,255,255,.82)}
+.socials{display:flex;flex-wrap:wrap;gap:.6rem;margin:.9rem 0 0;padding:0;list-style:none}
+.socials a{
+  display:inline-block;text-decoration:none;
+  border:1px solid rgba(255,255,255,.22);
+  color:rgba(255,255,255,.82);
+  font-family:var(--data);font-size:.66rem;letter-spacing:.14em;
+  text-transform:uppercase;padding:.5rem .85rem;
+  transition:border-color .18s,color .18s,background .18s;
+}
+.socials a:hover{border-color:var(--gold);color:var(--navy-deep);background:var(--gold)}
+.legal{
+  margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.12);
+  font-size:.78rem;color:rgba(255,255,255,.42);
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="assets/crest-knockout.png" alt="">
+      <span>Philly Blues</span>
+    </a>
+    <nav>
+      <a href="#venue" class="hide-sm">New home</a>
+      <a href="#about" class="hide-sm">About</a>
+      <a href="#membership" class="hide-sm">Membership</a>
+      <a href="#join" class="join">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <div class="hero" id="home">
+    <div class="wrap">
+      <div>
+        <span class="flag eyebrow"><span class="dot"></span> New home · 2026/27</span>
+        <p class="hero-pre">We've moved to</p>
+        <h1>Cavanaugh's Rittenhouse</h1>
+        <p class="kicker">
+          After years of matchdays across town, the Philly Blues have a new home pub —
+          and this is our first season in it. Same songs, same people, new room.
+        </p>
+        <p class="addr">
+          1913 Sansom St<br>
+          Philadelphia, PA 19103
+        </p>
+      </div>
+      <img class="hero-crest" src="assets/crest.png"
+           alt="Philly Blues crest — Official Chelsea Supporters Group, established 2010">
+    </div>
+  </div>
+
+  <!-- ============== SIGNATURE: MATCHDAY CARD ============== -->
+  <div class="fixture-zone">
+    <div class="wrap">
+      <div class="fixture">
+        <div class="fixture-rail">
+          <span>First match at the new home</span>
+          <span class="sep">/</span>
+          <span>Premier League · Matchweek 1</span>
+        </div>
+        <div class="fixture-body">
+          <div>
+            <div class="tie">
+              <span class="team home">Fulham</span>
+              <span class="v">v</span>
+              <span class="team">Chelsea</span>
+              <div class="tie-meta">Craven Cottage · Doors at Cavanaugh's from 2:00 PM</div>
+            </div>
+          </div>
+          <div class="kickoff">
+            <div class="t">3:00 PM</div>
+            <div class="d">Mon 24 Aug 2026 · ET</div>
+            <p style="margin:1.4rem 0 0">
+              <a class="btn btn-gold" href="#join">Come watch with us</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== THE NEW HOME ===================== -->
+  <section id="venue">
+    <div class="wrap">
+      <p class="rule-label">The new home</p>
+      <div class="two-col">
+        <div>
+          <h2>A proper room for a proper support</h2>
+          <p>
+            Cavanaugh's Rittenhouse sits just off Rittenhouse Square in Center City — walkable,
+            transit-friendly, and built for watching football. Every match on, sound up for
+            Chelsea, and enough space that the whole group fits without anyone craning at a
+            corner screen.
+          </p>
+          <p>
+            <strong>You don't need to be a member to come watch.</strong> Turn up, find the
+            banner, and someone will make room. That's the whole entry requirement.
+          </p>
+          <p style="margin-top:1.6rem">
+            <a class="btn btn-ghost"
+               href="https://www.google.com/maps/search/?api=1&query=Cavanaugh%27s+Rittenhouse+1913+Sansom+St+Philadelphia"
+               target="_blank" rel="noopener">Open in Maps</a>
+          </p>
+        </div>
+
+        <div class="venue-card">
+          <h3>Matchday details</h3>
+          <dl>
+            <div><dt>Where</dt><dd>Cavanaugh's Rittenhouse<br>1913 Sansom St, Philadelphia, PA 19103</dd></div>
+            <div><dt>When</dt><dd>Every Chelsea match, home and away</dd></div>
+            <div><dt>Arrive</dt><dd>Roughly an hour before kickoff</dd></div>
+            <div><dt>Look for</dt><dd>The Philly Blues banner</dd></div>
+            <div><dt>Questions</dt><dd><a href="mailto:phillyblues2010@gmail.com">phillyblues2010@gmail.com</a></dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="photo-row">
+        <div class="photo-slot">Photo slot 1 — first matchday at Cavanaugh's</div>
+        <div class="photo-slot">Photo slot 2 — the banner up at the new place</div>
+        <div class="photo-slot">Photo slot 3 — the group, 2026/27</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" style="background:#fff">
+    <div class="wrap">
+      <p class="rule-label">Who we are</p>
+      <div class="two-col">
+        <div>
+          <h2>Philadelphia's official home for Chelsea supporters</h2>
+          <p>
+            The Philly Blues are an officially recognised Platinum Tier Supporters Group of
+            Chelsea Football Club, bringing together Chelsea fans from across the Philadelphia
+            region since 2010.
+          </p>
+          <p>
+            Platinum status isn't just a title. It means recognition on the official Chelsea FC
+            website, priority access for the Player of the Year dinner, and a route to matchday
+            tickets at Stamford Bridge. It also means the club takes our numbers seriously —
+            which is why membership matters.
+          </p>
+          <p>
+            We're one of 32 Platinum clubs worldwide, and the only one in Philadelphia. We're an
+            independent supporters group with a direct affiliation to Chelsea Football Club.
+          </p>
+        </div>
+        <div>
+          <figure class="osc-card" style="margin:0">
+            <img src="assets/osc-logo.jpg"
+                 alt="Chelsea Football Club Official Supporters Club logo — Philly Blues">
+            <figcaption>Issued by Chelsea Football Club</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><div class="n">2010</div><div class="l">Established</div></div>
+        <div class="stat"><div class="n">300+</div><div class="l">On the mailing list</div></div>
+        <div class="stat"><div class="n">32</div><div class="l">Platinum clubs worldwide</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MEMBERSHIP ===================== -->
+  <section id="membership" class="membership">
+    <div class="wrap">
+      <p class="rule-label">Membership &amp; tickets</p>
+      <h2 style="max-width:16ch">How matchday tickets work in 2026/27</h2>
+
+      <div class="alert">
+        <span class="eyebrow">What changed this season</span>
+        <p>
+          Home tickets no longer go through us. Members now apply to Chelsea directly. Away
+          tickets are unchanged — those still come through the Philly Blues.
+        </p>
+      </div>
+
+      <div class="two-col" style="margin-top:2.5rem">
+        <div>
+          <p>
+            You'll need an active Official Chelsea Membership to apply for any ticket at
+            Stamford Bridge. Chelsea offers five tiers; note that Ticket Forwarding memberships
+            cannot earn loyalty points, which matters for in-demand matches.
+          </p>
+          <p>
+            Membership with us is separate, and it's what gets you into the away ticket process
+            and everything else the group does.
+          </p>
+          <p style="margin-top:1.8rem">
+            <a class="btn btn-gold"
+               href="https://memberships.chelseafc.com/en"
+               target="_blank" rel="noopener">Official Chelsea Membership</a>
+            <a class="btn btn-primary" href="#join" style="margin-left:.5rem">Join the Philly Blues</a>
+          </p>
+        </div>
+
+        <div>
+          <ol class="steps">
+            <li><div><strong>Buy an Official Chelsea Membership</strong><span>Required for anyone attending a match at Stamford Bridge.</span></div></li>
+            <li><div><strong>Join the Philly Blues</strong><span>Use the form below and we'll send payment details and next steps.</span></div></li>
+            <li><div><strong>Send us your membership number</strong><span>So we can add you to our roster for away ticket requests.</span></div></li>
+            <li><div><strong>Apply per match</strong><span>Home direct through Chelsea, away through us. See below.</span></div></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="ticket-split">
+        <div class="ticket-card">
+          <span class="eyebrow">Home matches — new this season</span>
+          <h3>You apply directly to Chelsea</h3>
+          <p>
+            Chelsea opens an application window for each home fixture on their eTicketing
+            platform. Apply any time within the window — entering early doesn't improve your
+            odds.
+          </p>
+          <ul>
+            <li>Allocated by an automated process, not first-come</li>
+            <li>Apply alone or as a group</li>
+            <li>Groups are allocated together</li>
+            <li>In-demand matches set a minimum loyalty point requirement</li>
+            <li>If one person in a group falls short, the whole application fails</li>
+          </ul>
+          <p style="margin-top:1.3rem">
+            <a class="btn btn-ghost-light" href="https://www.eticketing.co.uk/chelseafc/"
+               target="_blank" rel="noopener">Chelsea eTicketing</a>
+          </p>
+        </div>
+
+        <div class="ticket-card">
+          <span class="eyebrow">Away matches — unchanged</span>
+          <h3>Order through the group</h3>
+          <p>
+            Away requests still run through the Philly Blues. Get in touch and we'll walk you
+            through it — the process and timings vary by fixture.
+          </p>
+          <ul>
+            <li>Sold on a loyalty point basis for most fixtures</li>
+            <li>Points required are announced per match</li>
+            <li>Buying an away ticket still earns loyalty points</li>
+            <li>Away tickets can only be passed to an eligible member</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="alert" style="margin-top:2.5rem">
+        <span class="eyebrow">Loyalty points work differently now</span>
+        <p>
+          Points are earned by <strong>attending</strong> matches, not by buying tickets — your
+          ticket has to be scanned at the turnstile. Buying away tickets still earns points.
+          Anyone who bought a membership before 4pm on 31 July 2026 picked up five bonus points.
+        </p>
+      </div>
+
+      <p style="margin-top:2rem;font-size:.95rem">
+        Ticketing rules changed substantially for 2026/27. If anything here doesn't match what
+        you're seeing on Chelsea's site, Chelsea's site wins — and let us know so we can fix it.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== JOIN ===================== -->
+  <section id="join">
+    <div class="wrap">
+      <p class="rule-label">Join us</p>
+      <div class="two-col">
+        <div>
+          <h2>Get on the list</h2>
+          <p>
+            Interested in joining? Send us your details and we'll be in touch with membership
+            information. If you just want to know when the next match is on, say so — we'll add
+            you to the matchday emails and leave it at that.
+          </p>
+          <p>
+            You can also reach us any time at
+            <a href="mailto:phillyblues2010@gmail.com">phillyblues2010@gmail.com</a>.
+          </p>
+        </div>
+
+        <!-- FORM: GitHub Pages cannot process submissions on its own.
+             Replace YOUR_FORM_ID below with a real Formspree endpoint (free tier is fine),
+             or swap the action for Basin / Tally / a Google Form. -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-grid">
+            <div class="field">
+              <label for="fname">First name</label>
+              <input id="fname" name="first_name" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="lname">Last name</label>
+              <input id="lname" name="last_name" type="text" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="msg">Message</label>
+            <textarea id="msg" name="message" placeholder="Tell us a bit about yourself — how long you've supported Chelsea, whether you're after membership or just matchdays."></textarea>
+          </div>
+          <label class="check">
+            <input type="checkbox" name="newsletter" value="yes">
+            <span>Add me to matchday emails and group news.</span>
+          </label>
+          <button class="btn btn-primary" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Philly Blues</h4>
+        <p style="max-width:40ch">
+          Official webpage of the Philly Blues, a Platinum Tier Supporters Group of
+          Chelsea Football Club.
+        </p>
+      </div>
+      <div>
+        <h4>Home pub</h4>
+        <p>
+          Cavanaugh's Rittenhouse<br>
+          1913 Sansom St<br>
+          Philadelphia, PA 19103
+        </p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="mailto:phillyblues2010@gmail.com">phillyblues2010@gmail.com</a></p>
+        <ul class="socials">
+          <li><a href="https://www.instagram.com/philly_blues/" target="_blank" rel="noopener">Instagram</a></li>
+          <!-- TODO: confirm these two are still live (sourced from a 2023 event flyer) -->
+          <li><a href="https://www.facebook.com/phillybluesfc" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://x.com/phillyblues" target="_blank" rel="noopener">X</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">
+      Philly Blues is an independent supporters group and is not operated by Chelsea Football Club.
+      Club names and marks belong to their respective owners.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
