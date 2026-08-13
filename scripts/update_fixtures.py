@@ -88,10 +88,28 @@ def fetch_matches():
 
 
 def to_eastern(utc_string):
-    """'2026-08-24T19:00:00Z' -> (date 'YYYY-MM-DD', time '3:00 PM') in Philadelphia time."""
-    stamp = datetime.fromisoformat(utc_string.replace("Z", "+00:00")).astimezone(EASTERN)
-    clock = stamp.strftime("%I:%M %p").lstrip("0")
-    return stamp.strftime("%Y-%m-%d"), clock
+    """
+    '2026-08-24T19:00:00Z' -> ('2026-08-24', '3:00 PM') in Philadelphia time.
+
+    THE MIDNIGHT TRAP. When a kickoff time has not been announced yet, the API
+    returns midnight UTC as a placeholder rather than omitting the time. Naively
+    converting that to Eastern lands on 7pm or 8pm THE PREVIOUS DAY, which looks
+    like real data and is completely wrong. The first live run produced 36 such
+    fixtures before this guard existed.
+
+    So: midnight UTC is treated as "no time announced". The date is taken as-is,
+    without timezone conversion, and the time is returned as None.
+
+    No English league match kicks off at 00:00 UTC, so this cannot discard a
+    genuine time.
+    """
+    stamp = datetime.fromisoformat(utc_string.replace("Z", "+00:00"))
+
+    if stamp.hour == 0 and stamp.minute == 0:
+        return stamp.strftime("%Y-%m-%d"), None
+
+    local = stamp.astimezone(EASTERN)
+    return local.strftime("%Y-%m-%d"), local.strftime("%I:%M %p").lstrip("0")
 
 
 def matchweek_of(competition_string):
@@ -148,7 +166,9 @@ def main():
             changes.append(f"Matchweek {matchday}: date {fixture.get('date')} -> {new_date}")
             fixture["date"] = new_date
 
-        if fixture.get("kickoffET") != new_time:
+        # new_time is None when the kickoff has not been announced. Leave whatever
+        # is already in the file alone rather than wiping a good value with null.
+        if new_time is not None and fixture.get("kickoffET") != new_time:
             was = fixture.get("kickoffET") or "not announced"
             changes.append(f"Matchweek {matchday}: kickoff {was} -> {new_time}")
             fixture["kickoffET"] = new_time
