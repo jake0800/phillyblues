@@ -24,21 +24,21 @@
       "note": null
     },
     {
-      "date": "2026-08-29",
+      "date": "2026-08-30",
       "opponent": "Brighton & Hove Albion",
       "home": true,
       "venue": "Stamford Bridge",
-      "kickoffET": null,
+      "kickoffET": "9:00 AM",
       "competition": "Premier League · Matchweek 2",
       "label": null,
       "note": null
     },
     {
-      "date": "2026-09-05",
+      "date": "2026-09-06",
       "opponent": "Arsenal",
       "home": false,
       "venue": "Emirates Stadium",
-      "kickoffET": null,
+      "kickoffET": "11:30 AM",
       "competition": "Premier League · Matchweek 3",
       "label": null,
       "note": null
@@ -48,17 +48,17 @@
       "opponent": "Hull City",
       "home": true,
       "venue": "Stamford Bridge",
-      "kickoffET": null,
+      "kickoffET": "10:00 AM",
       "competition": "Premier League · Matchweek 4",
       "label": null,
       "note": null
     },
     {
-      "date": "2026-09-19",
+      "date": "2026-09-18",
       "opponent": "Brentford",
       "home": false,
       "venue": "Gtech Community Stadium",
-      "kickoffET": null,
+      "kickoffET": "3:00 PM",
       "competition": "Premier League · Matchweek 5",
       "label": null,
       "note": null
