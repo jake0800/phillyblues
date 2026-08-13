@@ -1,0 +1,397 @@
+{
+  "_README": [
+    "Fixture list for the Philly Blues site. The page shows the next fixture whose date has not passed.",
+    "TO EDIT: change a value between the quote marks. Do not remove commas or brackets.",
+    "kickoffET: kickoff in Philadelphia time, e.g. \"10:00 AM\". Use null when the time is not announced yet - the card then shows TBC.",
+    "home: true = Chelsea at Stamford Bridge. false = away.",
+    "label: optional text on the left of the top bar. null shows \"Next match\".",
+    "note: optional extra line, e.g. a fixture that may move.",
+    "doorsOpen: what time Cavanaugh's opens on matchday. PLACEHOLDER - replace with the real time.",
+    "Cup ties are not listed because opponents are not known until the draw. Add them by copying a block and setting the competition text.",
+    "Source: chelseafc.com 2026/27 fixtures announcement. Kickoff times are released in waves - check Chelsea before each match."
+  ],
+  "season": "2026/27",
+  "doorsOpen": "2:00 PM",
+  "fixtures": [
+    {
+      "date": "2026-08-24",
+      "opponent": "Fulham",
+      "home": false,
+      "venue": "Craven Cottage",
+      "kickoffET": "3:00 PM",
+      "competition": "Premier League · Matchweek 1",
+      "label": "First match at the new home",
+      "note": null
+    },
+    {
+      "date": "2026-08-29",
+      "opponent": "Brighton & Hove Albion",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 2",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-09-05",
+      "opponent": "Arsenal",
+      "home": false,
+      "venue": "Emirates Stadium",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 3",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-09-12",
+      "opponent": "Hull City",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 4",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-09-19",
+      "opponent": "Brentford",
+      "home": false,
+      "venue": "Gtech Community Stadium",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 5",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-10-10",
+      "opponent": "Bournemouth",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 6",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-10-17",
+      "opponent": "Everton",
+      "home": false,
+      "venue": "Hill Dickinson Stadium",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 7",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-10-24",
+      "opponent": "Tottenham Hotspur",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 8",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-10-31",
+      "opponent": "Manchester United",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 9",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-11-07",
+      "opponent": "Sunderland",
+      "home": false,
+      "venue": "Stadium of Light",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 10",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-11-21",
+      "opponent": "Leeds United",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 11",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-11-28",
+      "opponent": "Nottingham Forest",
+      "home": false,
+      "venue": "City Ground",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 12",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-12-02",
+      "opponent": "Crystal Palace",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 13",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-12-05",
+      "opponent": "Liverpool",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 14",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-12-12",
+      "opponent": "Manchester City",
+      "home": false,
+      "venue": "Etihad Stadium",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 15",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-12-19",
+      "opponent": "Aston Villa",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 16",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-12-26",
+      "opponent": "Coventry City",
+      "home": false,
+      "venue": "Coventry Building Society Arena",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 17",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2026-12-30",
+      "opponent": "Ipswich Town",
+      "home": false,
+      "venue": "Portman Road",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 18",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-01-02",
+      "opponent": "Newcastle United",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 19",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-01-06",
+      "opponent": "Crystal Palace",
+      "home": false,
+      "venue": "Selhurst Park",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 20",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-01-16",
+      "opponent": "Sunderland",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 21",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-01-23",
+      "opponent": "Leeds United",
+      "home": false,
+      "venue": "Elland Road",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 22",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-01-30",
+      "opponent": "Nottingham Forest",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 23",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-02-06",
+      "opponent": "Manchester United",
+      "home": false,
+      "venue": "Old Trafford",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 24",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-02-10",
+      "opponent": "Newcastle United",
+      "home": false,
+      "venue": "St James' Park",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 25",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-02-20",
+      "opponent": "Ipswich Town",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 26",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-02-27",
+      "opponent": "Aston Villa",
+      "home": false,
+      "venue": "Villa Park",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 27",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-03-03",
+      "opponent": "Coventry City",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 28",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-03-13",
+      "opponent": "Arsenal",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 29",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-03-20",
+      "opponent": "Hull City",
+      "home": false,
+      "venue": "MKM Stadium",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 30",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-04-10",
+      "opponent": "Fulham",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 31",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-04-17",
+      "opponent": "Brighton & Hove Albion",
+      "home": false,
+      "venue": "Amex Stadium",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 32",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-04-24",
+      "opponent": "Manchester City",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 33",
+      "label": null,
+      "note": "Subject to change for the FA Cup semi-final"
+    },
+    {
+      "date": "2027-05-01",
+      "opponent": "Liverpool",
+      "home": false,
+      "venue": "Anfield",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 34",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-05-08",
+      "opponent": "Tottenham Hotspur",
+      "home": false,
+      "venue": "Tottenham Hotspur Stadium",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 35",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-05-15",
+      "opponent": "Everton",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 36",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-05-23",
+      "opponent": "Bournemouth",
+      "home": false,
+      "venue": "Vitality Stadium",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 37",
+      "label": null,
+      "note": null
+    },
+    {
+      "date": "2027-05-30",
+      "opponent": "Brentford",
+      "home": true,
+      "venue": "Stamford Bridge",
+      "kickoffET": null,
+      "competition": "Premier League · Matchweek 38",
+      "label": null,
+      "note": null
+    }
+  ]
+}

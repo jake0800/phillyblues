@@ -200,7 +200,7 @@ nav a.join:hover{background:var(--gold);color:var(--navy-deep)}
   font-size:clamp(1.8rem,4.6vw,3.1rem);
   line-height:1;text-transform:uppercase;color:var(--navy-deep);
 }
-.tie .team.home{color:rgba(11,17,25,.42)}
+.tie .team.home,.tie .team.opp{color:rgba(11,17,25,.42)}
 .tie .v{
   font-family:var(--data);font-size:.8rem;font-weight:700;
   color:var(--gold);border:1px solid var(--gold);
@@ -432,23 +432,26 @@ footer a{color:rgba(255,255,255,.82)}
   <div class="fixture-zone">
     <div class="wrap">
       <div class="fixture">
+        <!-- The text below is the FALLBACK. The script at the end of this file
+             replaces it with the next fixture from fixtures.json. If that script
+             or that file ever fails, whatever is written here is what shows. -->
         <div class="fixture-rail">
-          <span>First match at the new home</span>
+          <span id="fx-label">First match at the new home</span>
           <span class="sep">/</span>
-          <span>Premier League · Matchweek 1</span>
+          <span id="fx-comp">Premier League · Matchweek 1</span>
         </div>
         <div class="fixture-body">
           <div>
             <div class="tie">
-              <span class="team home">Fulham</span>
+              <span class="team opp" id="fx-team-a">Fulham</span>
               <span class="v">v</span>
-              <span class="team">Chelsea</span>
-              <div class="tie-meta">Craven Cottage · Doors at Cavanaugh's from 2:00 PM</div>
+              <span class="team" id="fx-team-b">Chelsea</span>
+              <div class="tie-meta" id="fx-meta">Craven Cottage · Doors at Cavanaugh's from 2:00 PM</div>
             </div>
           </div>
           <div class="kickoff">
-            <div class="t">3:00 PM</div>
-            <div class="d">Mon 24 Aug 2026 · ET</div>
+            <div class="t" id="fx-time">3:00 PM</div>
+            <div class="d" id="fx-date">Mon 24 Aug 2026 · ET</div>
             <p style="margin:1.4rem 0 0">
               <a class="btn btn-gold" href="#join">Come watch with us</a>
             </p>
@@ -726,6 +729,100 @@ footer a{color:rgba(255,255,255,.82)}
     </p>
   </div>
 </footer>
+
+<script>
+/* ==================================================================
+   FIXTURE CARD
+
+   Reads fixtures.json and shows the next match that hasn't been
+   played yet. Nothing else on the page depends on this.
+
+   IF THIS FAILS, NOTHING BREAKS. Missing file, a typo in the JSON,
+   no internet - the card simply keeps the text written in the HTML
+   above. It never goes blank.
+
+   To change a fixture, edit fixtures.json. Do not edit this script.
+   ================================================================== */
+(function () {
+  var el = {
+    label: document.getElementById('fx-label'),
+    comp:  document.getElementById('fx-comp'),
+    teamA: document.getElementById('fx-team-a'),
+    teamB: document.getElementById('fx-team-b'),
+    meta:  document.getElementById('fx-meta'),
+    time:  document.getElementById('fx-time'),
+    date:  document.getElementById('fx-date')
+  };
+  for (var k in el) { if (!el[k]) return; }
+
+  fetch('fixtures.json', { cache: 'no-cache' })
+    .then(function (r) {
+      if (!r.ok) throw new Error('fixtures.json returned ' + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      var today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      var upcoming = (data.fixtures || []).filter(function (f) {
+        return new Date(f.date + 'T00:00:00') >= today;
+      });
+
+      if (!upcoming.length) { showNothingLeft(); return; }
+      show(upcoming[0], data.doorsOpen);
+    })
+    .catch(function (err) {
+      if (window.console) {
+        console.warn('Fixture card left as written in the HTML:', err.message);
+      }
+    });
+
+  function show(f, doors) {
+    el.label.textContent = f.label || 'Next match';
+    el.comp.textContent  = f.competition || '';
+
+    /* Home team is listed first, as is conventional. The opponent is
+       always the greyed one so Chelsea reads as the subject either way. */
+    var chelsea  = { name: 'Chelsea',  opp: false };
+    var opponent = { name: f.opponent, opp: true  };
+    var order = f.home ? [chelsea, opponent] : [opponent, chelsea];
+
+    paint(el.teamA, order[0]);
+    paint(el.teamB, order[1]);
+
+    var bits = [];
+    if (f.venue) bits.push(f.venue);
+    if (f.note)  bits.push(f.note);
+    if (doors)   bits.push("Doors at Cavanaugh's from " + doors);
+    el.meta.textContent = bits.join(' · ');
+
+    el.time.textContent = f.kickoffET || 'Time TBC';
+
+    var d = new Date(f.date + 'T00:00:00');
+    /* Some browsers render this as "Mon, 24 Aug 2026". The card was
+       designed without the comma, so it is stripped. */
+    var pretty = d.toLocaleDateString('en-GB', {
+      weekday: 'short', day: 'numeric', month: 'short', year: 'numeric'
+    }).replace(',', '');
+    el.date.textContent = f.kickoffET ? pretty + ' · ET' : pretty;
+  }
+
+  function showNothingLeft() {
+    el.label.textContent = 'Next match';
+    el.comp.textContent  = 'To be confirmed';
+    paint(el.teamA, { name: 'Chelsea', opp: false });
+    paint(el.teamB, { name: 'TBC',     opp: true  });
+    el.meta.textContent = 'The season has finished. New fixtures are usually released in June.';
+    el.time.textContent = 'TBC';
+    el.date.textContent = '';
+  }
+
+  function paint(node, team) {
+    node.textContent = team.name;
+    node.className = team.opp ? 'team opp' : 'team';
+  }
+})();
+</script>
 
 </body>
 </html>
