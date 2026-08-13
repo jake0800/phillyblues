@@ -1,0 +1,20 @@
+# Working files — stay on disk, backed up by OneDrive, never pushed.
+# The repo is public, so anything listed here would otherwise be world-readable.
+
+# Contains the officers' personal email addresses. Must never be committed.
+PhillyBlues_Website_Project_Brief.md
+
+# Superseded working files
+DEPLOY_TEST_STEPS.md
+phillyblues-site.zip
+phillyblues-preview-standalone.html
+phillyblues-review-desktop.png
+phillyblues-review-mobile.png
+
+# Anything the site doesn't serve
+*.zip
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
