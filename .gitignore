@@ -14,6 +14,10 @@ phillyblues-review-mobile.png
 # Anything the site doesn't serve
 *.zip
 
+# Python build artefacts — regenerated automatically, never commit
+__pycache__/
+*.pyc
+
 # OS noise
 .DS_Store
 Thumbs.db

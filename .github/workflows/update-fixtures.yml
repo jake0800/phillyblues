@@ -1,0 +1,65 @@
+name: Update fixture times
+
+# Checks football-data.org for Chelsea's Premier League kickoff times and opens a
+# pull request when something has changed. It never commits to main by itself —
+# you review the diff and merge.
+#
+# SETUP, ONE TIME:
+#   1. Get a free key at football-data.org/client/register
+#   2. Repo Settings -> Secrets and variables -> Actions -> New repository secret
+#      Name: FOOTBALL_DATA_TOKEN
+#   3. Repo Settings -> Actions -> General -> Workflow permissions
+#      Tick "Allow GitHub Actions to create and approve pull requests"
+#      Without this the job fails at the final step.
+#
+# TO TEST: Actions tab -> Update fixture times -> Run workflow.
+
+on:
+  schedule:
+    # 11:00 UTC daily — early morning in Philadelphia, after UK announcements.
+    # GitHub runs scheduled jobs on UTC year-round, so this drifts an hour
+    # relative to local time across daylight saving. That does not matter here.
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check for new kickoff times
+        id: update
+        env:
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+        run: python scripts/update_fixtures.py
+
+      - name: Open a pull request if anything changed
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: fixtures/auto-update
+          delete-branch: true
+          commit-message: "Update fixture kickoff times from football-data.org"
+          title: "Fixture times have changed"
+          body: |
+            Automated check against football-data.org found differences in
+            Chelsea's Premier League schedule.
+
+            ${{ steps.update.outputs.changes }}
+
+            Only `date` and `kickoffET` are ever touched. Hand-written fields —
+            `label`, `note`, `venue`, `opponent`, `home`, `doorsOpen` — are left
+            alone. Check the diff below to confirm that held.
+
+            Merging this publishes the new times to the site.
+
+            Cup ties are not covered: the FA Cup and Carabao Cup are outside
+            football-data.org's free tier, so those stay manual.
