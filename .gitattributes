@@ -1,0 +1,14 @@
+# Keep line endings consistent between Windows and the GitHub Actions runner.
+#
+# Without this, editing a file on Windows can convert it to CRLF while the
+# runner writes LF. Git then reports every line of the file as changed, which
+# buries real changes in noise and creates pointless merge conflicts.
+#
+# fixtures.json is the one that matters: the daily workflow rewrites it on
+# Linux, and Jake edits it on Windows.
+
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.zip binary
