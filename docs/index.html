@@ -662,10 +662,17 @@ footer a{color:rgba(255,255,255,.82)}
           </p>
         </div>
 
-        <!-- FORM: GitHub Pages cannot process submissions on its own.
-             Replace YOUR_FORM_ID below with a real Formspree endpoint (free tier is fine),
-             or swap the action for Basin / Tally / a Google Form. -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <!-- FORM: GitHub Pages cannot process submissions itself, so this posts to
+             Formspree, which emails the result on.
+
+             Endpoint: form "Philly Blues — Join", Formspree account jake0800@gmail.com.
+             Free tier: 50 submissions per month, 30 days of history in the dashboard.
+             The notification emails are the real record — do not rely on the dashboard.
+
+             BEFORE LAUNCH: submissions currently go to Jake personally. Add
+             phillyblues2010@gmail.com as a linked email in Formspree, have someone with
+             that inbox click the verification link, then switch this form's recipient. -->
+        <form action="https://formspree.io/f/xljrnona" method="POST">
           <div class="form-grid">
             <div class="field">
               <label for="fname">First name</label>
