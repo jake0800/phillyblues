@@ -11,7 +11,7 @@
 <meta property="og:description" content="We're back at Cavanaugh's Rittenhouse, where we watched the 2021 Champions League run. First match Monday 24 August, Fulham v Chelsea, 3:00 PM ET.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.phillybluescfc.com/">
-<meta property="og:image" content="https://www.phillybluescfc.com/assets/crest-512.png">
+<meta property="og:image" content="https://www.phillybluescfc.com/assets/cav2021-poster.jpg">
 <link rel="icon" href="assets/crest-512.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -348,16 +348,16 @@ section{padding:clamp(3.5rem,7vw,5.5rem) 0}
 .btn-ghost-light{border-color:var(--gold);color:var(--gold-bright);background:transparent}
 .btn-ghost-light:hover{background:var(--gold);color:var(--navy-deep)}
 
-/* photo placeholders — remove once real Cavanaugh's photos exist */
-.photo-slot{
-  aspect-ratio:4/3;background:var(--paper-warm);
-  border:1px dashed rgba(3,70,148,.3);
-  display:grid;place-items:center;text-align:center;padding:1rem;
-  font-family:var(--data);font-size:.68rem;letter-spacing:.12em;
-  text-transform:uppercase;color:rgba(3,70,148,.55);
+.media-feature{margin:2.5rem 0 0}
+.media-feature video{width:100%;height:auto;display:block;background:var(--navy-deep)}
+.media-pair{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem}
+.media-pair img{width:100%;height:auto;display:block}
+.media-feature figcaption,.media-pair figcaption{
+  font-family:var(--data);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(11,17,25,.6);margin-top:.7rem;line-height:1.5;
 }
-.photo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
-@media(max-width:680px){.photo-row{grid-template-columns:1fr}}
+.media-pair figure{margin:0}
+@media(max-width:680px){.media-pair{grid-template-columns:1fr}}
 
 footer{background:var(--ink);color:rgba(255,255,255,.62);padding:3.5rem 0 2.5rem;font-size:.92rem}
 footer .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem}
@@ -499,10 +499,26 @@ footer a{color:rgba(255,255,255,.82)}
         </div>
       </div>
 
-      <div class="photo-row">
-        <div class="photo-slot">Photo slot 1 — first matchday at Cavanaugh's</div>
-        <div class="photo-slot">Photo slot 2 — the banner up at Cav's</div>
-        <div class="photo-slot">Photo slot 3 — the group, 2026/27</div>
+      <figure class="media-feature">
+        <video controls preload="metadata" playsinline
+               poster="assets/cav2021-poster.jpg">
+          <source src="assets/cav2021-celebration-web.mp4" type="video/mp4">
+          Your browser doesn't support video. <a href="assets/cav2021-celebration-web.mp4">Download the clip.</a>
+        </video>
+        <figcaption>Full time, 29 May 2021. Outside Cav's, watching Chelsea lift the Champions League.</figcaption>
+      </figure>
+
+      <div class="media-pair">
+        <figure>
+          <img src="assets/cav2021-street.jpg" loading="lazy"
+               alt="The old Cavanaugh's Rittenhouse awning seen from the sidewalk, May 2021">
+          <figcaption>The old place, a block from where we are now.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/cav2021-banner.jpg" loading="lazy"
+               alt="Philly Blues banner hung outside Cavanaugh's with a signed Chelsea ball on a table">
+          <figcaption>Banner up, ball out, tables on the pavement. May 2021.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
