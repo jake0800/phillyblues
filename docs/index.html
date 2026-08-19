@@ -307,6 +307,7 @@ section{padding:clamp(3.5rem,7vw,5.5rem) 0}
 }
 .field input:focus,.field textarea:focus{border-color:var(--navy)}
 .field textarea{min-height:120px;resize:vertical}
+.field .hint{font-family:var(--body);font-size:.82rem;color:rgba(11,17,25,.55);margin-top:-.05rem}
 .check{display:flex;gap:.7rem;align-items:flex-start;margin-bottom:1.5rem;font-size:.92rem}
 .check input{margin-top:.3rem;width:16px;height:16px;flex:none;accent-color:var(--navy)}
 
@@ -709,6 +710,11 @@ footer a{color:rgba(255,255,255,.82)}
           <div class="field">
             <label for="email">Email</label>
             <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="trueblue">Chelsea True Blue number</label>
+            <input id="trueblue" name="true_blue_number" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g. 12345678">
+            <span class="hint">Optional — add it if you're a Chelsea member. Leave blank if you're not.</span>
           </div>
           <div class="field">
             <label for="msg">Message</label>
