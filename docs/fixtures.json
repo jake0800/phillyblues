@@ -68,7 +68,7 @@
       "opponent": "Bournemouth",
       "home": true,
       "venue": "Stamford Bridge",
-      "kickoffET": null,
+      "kickoffET": "10:00 AM",
       "competition": "Premier League · Matchweek 6",
       "label": null,
       "note": null
@@ -78,7 +78,7 @@
       "opponent": "Everton",
       "home": false,
       "venue": "Hill Dickinson Stadium",
-      "kickoffET": null,
+      "kickoffET": "7:30 AM",
       "competition": "Premier League · Matchweek 7",
       "label": null,
       "note": null
@@ -88,7 +88,7 @@
       "opponent": "Tottenham Hotspur",
       "home": true,
       "venue": "Stamford Bridge",
-      "kickoffET": null,
+      "kickoffET": "12:30 PM",
       "competition": "Premier League · Matchweek 8",
       "label": null,
       "note": null
@@ -98,7 +98,7 @@
       "opponent": "Manchester United",
       "home": true,
       "venue": "Stamford Bridge",
-      "kickoffET": null,
+      "kickoffET": "8:30 AM",
       "competition": "Premier League · Matchweek 9",
       "label": null,
       "note": null
