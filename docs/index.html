@@ -408,6 +408,7 @@ footer a{color:rgba(255,255,255,.82)}
     <nav>
       <a href="#venue" class="hide-sm">Back home</a>
       <a href="#about" class="hide-sm">About</a>
+      <a href="#fantasy" class="hide-sm">Fantasy</a>
       <a href="#membership" class="hide-sm">Membership</a>
       <a href="#join" class="join">Join</a>
     </nav>
@@ -568,6 +569,125 @@ footer a{color:rgba(255,255,255,.82)}
         <div class="stat"><div class="n">2010</div><div class="l">Established</div></div>
         <div class="stat"><div class="n">300+</div><div class="l">On the mailing list</div></div>
         <div class="stat"><div class="n">32</div><div class="l">Platinum clubs worldwide</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FANTASY LEAGUE ===================== -->
+  <!-- Drop this whole block into index.html between the ABOUT section
+       (its closing </section>) and the MEMBERSHIP section comment.
+       It reuses the site's existing classes and CSS variables. The only
+       new CSS is the scoped .fpl-* block below, which follows the same
+       type/colour system (Anton / JetBrains Mono / navy + gold).
+
+       DATA: the standings are read from fantasy.json by the script at the
+       bottom of index.html (added alongside this block). Same pattern as
+       the fixture card — if the file or fetch fails, the pre-season state
+       written in the HTML below is what shows. It never goes blank. -->
+  <style>
+    .fpl-wrap{border:1px solid rgba(3,70,148,.16);background:#fff;margin-top:.5rem}
+    .fpl-head{
+      display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
+      gap:.6rem 2rem;background:var(--navy);color:#fff;
+      padding:.85rem 1.7rem;
+      font-family:var(--data);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;
+    }
+    .fpl-head .sep{color:var(--gold-bright)}
+    .fpl-table{width:100%;border-collapse:collapse}
+    .fpl-table th{
+      font-family:var(--data);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
+      color:rgba(11,17,25,.55);font-weight:700;text-align:left;
+      padding:1rem 1.7rem;border-bottom:1px solid var(--rule);
+    }
+    .fpl-table th.num,.fpl-table td.num{text-align:right;font-family:var(--data)}
+    .fpl-table td{padding:.95rem 1.7rem;border-bottom:1px solid rgba(3,70,148,.1);vertical-align:middle}
+    .fpl-table tr:last-child td{border-bottom:none}
+    .fpl-table tbody tr:hover td{background:rgba(3,70,148,.03)}
+    .fpl-pos{
+      font-family:var(--display);font-size:1.15rem;line-height:1;color:var(--navy);
+      width:1.4rem;display:inline-block;
+    }
+    .fpl-table tr.top .fpl-pos{color:var(--gold)}
+    .fpl-mgr{font-weight:600;color:var(--ink);line-height:1.25}
+    .fpl-team{
+      font-family:var(--data);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+      color:rgba(11,17,25,.5);margin-top:.15rem;
+    }
+    .fpl-gw{font-size:.9rem;color:rgba(11,17,25,.6)}
+    .fpl-pts{font-family:var(--display);font-size:1.3rem;line-height:1;color:var(--navy-deep)}
+    .fpl-foot{
+      display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;
+      padding:1.5rem 1.7rem;border-top:1px solid var(--rule);
+    }
+    .fpl-note{font-family:var(--data);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(11,17,25,.55)}
+    /* Pre-season panel, shown until the first gameweek finishes. */
+    .fpl-pre{padding:2.6rem 1.7rem;text-align:center}
+    .fpl-pre .big{
+      font-family:var(--display);font-size:clamp(1.6rem,4vw,2.4rem);line-height:1;
+      text-transform:uppercase;color:var(--navy-deep);margin:0 0 .8rem;
+    }
+    .fpl-pre p{margin:0 auto;max-width:46ch;color:rgba(11,17,25,.72)}
+    .fpl-pre .cta{margin-top:1.7rem}
+    @media(max-width:560px){
+      .fpl-table th.hide-sm,.fpl-table td.hide-sm{display:none}
+      .fpl-table th,.fpl-table td{padding-left:1.1rem;padding-right:1.1rem}
+    }
+  </style>
+
+  <section id="fantasy" style="background:#fff">
+    <div class="wrap">
+      <p class="rule-label">Fantasy league</p>
+      <div class="two-col" style="align-items:end;margin-bottom:2.2rem">
+        <div>
+          <h2 style="max-width:15ch">The Philly Blues mini-league</h2>
+          <p>
+            Our private Fantasy Premier League runs the whole season. Pick your XI, take on the
+            rest of the group, and see if you can top the table before the lads at Cav's do.
+            Standings update after every gameweek.
+          </p>
+        </div>
+        <div style="justify-self:start">
+          <p style="margin:0">
+            <a class="btn btn-gold" id="fpl-join-top"
+               href="https://fantasy.premierleague.com/leagues/auto-join/hjvfhs"
+               target="_blank" rel="noopener">Join the mini-league</a>
+          </p>
+          <p class="fpl-note" style="margin:.9rem 0 0">
+            FPL app → Leagues → Join a league → paste the invite link
+          </p>
+        </div>
+      </div>
+
+      <div class="fpl-wrap">
+        <div class="fpl-head">
+          <span id="fpl-head-left">Philly Blues ⭐️⭐️ Cup</span>
+          <span id="fpl-head-right"><span class="sep">/</span> 43 managers · season starts GW1</span>
+        </div>
+
+        <!-- PRE-SEASON FALLBACK. The script replaces #fpl-body with the Top 10
+             table once fantasy.json has standings. Until then, this shows. -->
+        <div id="fpl-body">
+          <div class="fpl-pre">
+            <p class="big">The table's empty — for now</p>
+            <p>
+              43 managers are signed up and ready. No points yet: the season kicks off at
+              Gameweek 1. Standings will appear here automatically once the first gameweek is
+              in the books. Get your side in before the deadline.
+            </p>
+            <p class="cta">
+              <a class="btn btn-primary"
+                 href="https://fantasy.premierleague.com/leagues/auto-join/hjvfhs"
+                 target="_blank" rel="noopener">Join before GW1</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="fpl-foot">
+          <span class="fpl-note" id="fpl-foot-note">Private league · Philly Blues members</span>
+          <a class="btn btn-ghost" id="fpl-full"
+             href="https://fantasy.premierleague.com/en/leagues/588890/standings/c"
+             target="_blank" rel="noopener">Full table on FPL</a>
+        </div>
       </div>
     </div>
   </section>
@@ -775,6 +895,112 @@ footer a{color:rgba(255,255,255,.82)}
     </p>
   </div>
 </footer>
+
+<script>
+/* ==================================================================
+   FANTASY STANDINGS
+
+   Reads fantasy.json and, once the season has started, replaces the
+   pre-season panel with the top-10 standings. Same idea as the fixture
+   card: nothing else on the page depends on this.
+
+   IF THIS FAILS, NOTHING BREAKS. Missing file, bad JSON, no internet,
+   or an empty standings list — the section simply keeps the pre-season
+   panel written in the HTML. It never goes blank.
+
+   The data file is written for you by scripts/update_fantasy.py, run on
+   a schedule by .github/workflows/update-fantasy.yml. To change the
+   league or invite link, edit fantasy.json — not this script.
+   ================================================================== */
+(function () {
+  var body = document.getElementById('fpl-body');
+  if (!body) return;
+
+  var headLeft  = document.getElementById('fpl-head-left');
+  var headRight = document.getElementById('fpl-head-right');
+  var footNote  = document.getElementById('fpl-foot-note');
+  var joinTop   = document.getElementById('fpl-join-top');
+  var joinFull  = document.getElementById('fpl-full');
+
+  fetch('fantasy.json', { cache: 'no-cache' })
+    .then(function (r) {
+      if (!r.ok) throw new Error('fantasy.json returned ' + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      // Keep the invite / full-table links in sync with the data file,
+      // so they only ever need changing in one place.
+      if (data.inviteUrl) {
+        if (joinTop)  joinTop.href  = data.inviteUrl;
+      }
+      if (data.standingsUrl && joinFull) joinFull.href = data.standingsUrl;
+      if (data.leagueName && headLeft) headLeft.textContent = data.leagueName;
+
+      var rows = (data.standings || []);
+      if (!rows.length) {
+        // Season not started, or no gameweek finished yet: leave the
+        // pre-season panel as written, but refresh the manager count.
+        if (headRight && data.totalManagers) {
+          headRight.innerHTML = '<span class="sep">/</span> ' +
+            data.totalManagers + ' managers · season starts GW1';
+        }
+        return;
+      }
+
+      // We have standings — build the table.
+      if (headRight) {
+        headRight.innerHTML = '<span class="sep">/</span> Gameweek ' +
+          (data.gameweek != null ? data.gameweek : '—') +
+          ' · updated ' + prettyDate(data.updated);
+      }
+      if (footNote && data.totalManagers) {
+        footNote.textContent = data.totalManagers + ' managers · showing top ' + rows.length;
+      }
+
+      body.innerHTML = tableHTML(rows);
+    })
+    .catch(function (err) {
+      if (window.console) {
+        console.warn('Fantasy section left in pre-season state:', err.message);
+      }
+    });
+
+  function tableHTML(rows) {
+    var head =
+      '<table class="fpl-table"><thead><tr>' +
+        '<th style="width:3rem">#</th>' +
+        '<th>Manager</th>' +
+        '<th class="num hide-sm">GW</th>' +
+        '<th class="num">Total</th>' +
+      '</tr></thead><tbody>';
+
+    var body = rows.map(function (r) {
+      var top = r.pos <= 3 ? ' class="top"' : '';
+      return '<tr' + top + '>' +
+        '<td><span class="fpl-pos">' + esc(r.pos) + '</span></td>' +
+        '<td><div class="fpl-mgr">' + esc(r.manager) + '</div>' +
+            '<div class="fpl-team">' + esc(r.team) + '</div></td>' +
+        '<td class="num fpl-gw hide-sm">' + esc(r.gw) + '</td>' +
+        '<td class="num"><span class="fpl-pts">' + esc(r.total) + '</span></td>' +
+      '</tr>';
+    }).join('');
+
+    return head + body + '</tbody></table>';
+  }
+
+  function prettyDate(iso) {
+    if (!iso) return '';
+    var d = new Date(iso + 'T00:00:00');
+    if (isNaN(d)) return iso;
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  }
+
+  function esc(v) {
+    return String(v == null ? '' : v)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+})();
+</script>
 
 <script>
 /* ==================================================================
