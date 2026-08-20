@@ -1,0 +1,60 @@
+name: Update fantasy standings
+
+# Pulls the Philly Blues mini-league standings from the public Fantasy
+# Premier League API and opens a pull request when they've changed. It
+# never commits to main by itself — you review the diff and merge.
+#
+# SETUP, ONE TIME:
+#   Repo Settings -> Actions -> General -> Workflow permissions
+#     Tick "Allow GitHub Actions to create and approve pull requests"
+#   That's the only setup — the FPL standings API is public, so unlike the
+#   fixtures workflow there is no API token to add.
+#
+# TO TEST: Actions tab -> Update fantasy standings -> Run workflow.
+#
+# CADENCE: Tuesday mornings. Gameweeks usually finish Sunday/Monday, so a
+# Tuesday run picks up settled points. Harmless to run more often — it only
+# opens a PR when something actually changed.
+
+on:
+  schedule:
+    # 12:00 UTC every Tuesday — early morning in Philadelphia.
+    - cron: "0 12 * * 2"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Pull the latest standings
+        run: python scripts/update_fantasy.py
+
+      - name: Open a pull request if anything changed
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: fantasy/auto-update
+          delete-branch: true
+          commit-message: "Update fantasy standings from the FPL API"
+          title: "Fantasy standings have changed"
+          body: |
+            Automated pull of the Philly Blues mini-league from the Fantasy
+            Premier League API.
+
+            Only the data fields in `docs/fantasy.json` are touched —
+            `gameweek`, `updated`, `totalManagers`, and the top-10
+            `standings`. The hand-written identity fields (`leagueName`,
+            `leagueId`, `inviteUrl`, `standingsUrl`, `_README`) are left
+            alone, except `leagueName`, which is refreshed only if the API
+            returns a non-empty name.
+
+            Merging this publishes the new standings to the site.

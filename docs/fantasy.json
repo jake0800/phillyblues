@@ -1,0 +1,26 @@
+{
+  "_README": [
+    "Fantasy Premier League standings for the Philly Blues site.",
+    "This file is written automatically by scripts/update_fantasy.py, run on a",
+    "schedule by .github/workflows/update-fantasy.yml. You should not need to",
+    "edit it by hand — but if you do, keep it valid JSON (mind the commas).",
+    "",
+    "leagueName / leagueId / inviteUrl / totalManagers: identity of the league.",
+    "gameweek: the last completed gameweek these standings reflect. null before the season starts.",
+    "updated: ISO date the file was last written by the script.",
+    "standings: top 10, in order. Empty [] before any gameweek has finished —",
+    "  the page then shows its pre-season 'season starts GW1' state.",
+    "Each standing: pos (rank), manager (person), team (FPL team name),",
+    "  gw (that gameweek's points), total (season total points).",
+    "",
+    "Source: fantasy.premierleague.com public API, league 588890."
+  ],
+  "leagueName": "Philly Blues ⭐️⭐️ Cup",
+  "leagueId": 588890,
+  "inviteUrl": "https://fantasy.premierleague.com/leagues/auto-join/hjvfhs",
+  "standingsUrl": "https://fantasy.premierleague.com/en/leagues/588890/standings/c",
+  "totalManagers": 43,
+  "gameweek": null,
+  "updated": "2026-08-20",
+  "standings": []
+}
