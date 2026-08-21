@@ -19,8 +19,19 @@
   "leagueId": 588890,
   "inviteUrl": "https://fantasy.premierleague.com/leagues/auto-join/hjvfhs",
   "standingsUrl": "https://fantasy.premierleague.com/en/leagues/588890/standings/c",
-  "totalManagers": 43,
-  "gameweek": null,
-  "updated": "2026-08-20",
-  "standings": []
+  "totalManagers": 50,
+  "gameweek": 1,
+  "updated": "2026-08-21",
+  "standings": [
+    {"pos": 1, "manager": "N Rosoff", "team": "Up_the_Chels", "gw": 27, "total": 27},
+    {"pos": 2, "manager": "Timothy Megaw", "team": "Chelsea Rejects", "gw": 27, "total": 27},
+    {"pos": 3, "manager": "Christopher Thorpe", "team": "Boehly's Xabi Ending", "gw": 26, "total": 26},
+    {"pos": 4, "manager": "Jeremy Rose", "team": "Big Ballers", "gw": 26, "total": 26},
+    {"pos": 5, "manager": "Juan Carlos Escobar", "team": "Pending Moderation", "gw": 23, "total": 23},
+    {"pos": 6, "manager": "Adam Yelk", "team": "Philly_Blues_CFC", "gw": 21, "total": 21},
+    {"pos": 7, "manager": "pavan Rana", "team": "pavan's Team", "gw": 21, "total": 21},
+    {"pos": 8, "manager": "Gerald McKim", "team": "raldinho", "gw": 20, "total": 20},
+    {"pos": 9, "manager": "Troy Hoffman", "team": "IceColdMorganPalmers", "gw": 20, "total": 20},
+    {"pos": 10, "manager": "Aron Szoke", "team": "John Terry's Wives", "gw": 20, "total": 20}
+  ]
 }
