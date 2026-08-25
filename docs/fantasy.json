@@ -21,17 +21,77 @@
   "standingsUrl": "https://fantasy.premierleague.com/en/leagues/588890/standings/c",
   "totalManagers": 50,
   "gameweek": 1,
-  "updated": "2026-08-21",
+  "updated": "2026-08-25",
   "standings": [
-    {"pos": 1, "manager": "N Rosoff", "team": "Up_the_Chels", "gw": 27, "total": 27},
-    {"pos": 2, "manager": "Timothy Megaw", "team": "Chelsea Rejects", "gw": 27, "total": 27},
-    {"pos": 3, "manager": "Christopher Thorpe", "team": "Boehly's Xabi Ending", "gw": 26, "total": 26},
-    {"pos": 4, "manager": "Jeremy Rose", "team": "Big Ballers", "gw": 26, "total": 26},
-    {"pos": 5, "manager": "Juan Carlos Escobar", "team": "Pending Moderation", "gw": 23, "total": 23},
-    {"pos": 6, "manager": "Adam Yelk", "team": "Philly_Blues_CFC", "gw": 21, "total": 21},
-    {"pos": 7, "manager": "pavan Rana", "team": "pavan's Team", "gw": 21, "total": 21},
-    {"pos": 8, "manager": "Gerald McKim", "team": "raldinho", "gw": 20, "total": 20},
-    {"pos": 9, "manager": "Troy Hoffman", "team": "IceColdMorganPalmers", "gw": 20, "total": 20},
-    {"pos": 10, "manager": "Aron Szoke", "team": "John Terry's Wives", "gw": 20, "total": 20}
+    {
+      "pos": 1,
+      "manager": "Aron Szoke",
+      "team": "John Terry’s Wives",
+      "gw": 94,
+      "total": 94
+    },
+    {
+      "pos": 2,
+      "manager": "Adam Yelk",
+      "team": "Philly_Blues_CFC",
+      "gw": 83,
+      "total": 83
+    },
+    {
+      "pos": 2,
+      "manager": "Ken M",
+      "team": "Ken's Team",
+      "gw": 83,
+      "total": 83
+    },
+    {
+      "pos": 4,
+      "manager": "Christopher DiDomenico",
+      "team": "Christopher's Team",
+      "gw": 82,
+      "total": 82
+    },
+    {
+      "pos": 5,
+      "manager": "Diana Ybarra",
+      "team": "Ybarza FC",
+      "gw": 79,
+      "total": 79
+    },
+    {
+      "pos": 5,
+      "manager": "Jedediah Folks",
+      "team": "Super Cold Bros",
+      "gw": 79,
+      "total": 79
+    },
+    {
+      "pos": 5,
+      "manager": "Jr --",
+      "team": "CFC Yaw",
+      "gw": 79,
+      "total": 79
+    },
+    {
+      "pos": 5,
+      "manager": "charles hagan",
+      "team": "Cold Coles",
+      "gw": 79,
+      "total": 79
+    },
+    {
+      "pos": 9,
+      "manager": "Scott Brant",
+      "team": "havent a kalou",
+      "gw": 75,
+      "total": 75
+    },
+    {
+      "pos": 10,
+      "manager": "Timothy Megaw",
+      "team": "Chelsea Rejects",
+      "gw": 74,
+      "total": 74
+    }
   ]
 }
