@@ -74,11 +74,15 @@ def get_json(url):
 
 def current_gameweek():
     """
-    The last finished gameweek's id, or None if none has finished.
+    The gameweek id these standings should be labeled with.
 
-    Uses bootstrap-static's events. 'finished' means the gameweek's points
-    are settled. We report the highest finished id — that is the gameweek
-    the standings reflect.
+    Prefers the last FINISHED gameweek (points fully settled, bonus applied).
+    Falls back to the CURRENT gameweek (is_current=True) when nothing has
+    finished yet — this covers the common lag between "all matches played"
+    and FPL flipping the finished flag, which can take a day or more after
+    the last match of a gameweek. Without this fallback, standings pulled
+    in that window would carry a real top-10 table but a blank gameweek
+    label, which reads as broken even though the data is correct.
     """
     data = get_json(BOOTSTRAP_URL)
     events = data.get("events")
@@ -86,7 +90,11 @@ def current_gameweek():
         die("bootstrap-static had no 'events' list. The API shape may have changed.")
 
     finished = [e.get("id") for e in events if e.get("finished") and isinstance(e.get("id"), int)]
-    return max(finished) if finished else None
+    if finished:
+        return max(finished)
+
+    current = [e.get("id") for e in events if e.get("is_current") and isinstance(e.get("id"), int)]
+    return current[0] if current else None
 
 
 def main():
