@@ -1042,7 +1042,7 @@ footer a{color:rgba(255,255,255,.82)}
       });
 
       if (!upcoming.length) { showNothingLeft(); return; }
-      show(upcoming[0], data.doorsOpen);
+      show(upcoming[0], data.doorsOpenMinutesBefore);
     })
     .catch(function (err) {
       if (window.console) {
@@ -1050,7 +1050,30 @@ footer a{color:rgba(255,255,255,.82)}
       }
     });
 
-  function show(f, doors) {
+  /* Doors used to be a fixed clock time in fixtures.json ("2:00 PM"),
+     which was only ever right for the handful of matches that kick off
+     in the afternoon. Most Chelsea kickoffs land early morning Eastern
+     (7:30-11:30 AM), so a flat "doors from 2:00 PM" text would print
+     AFTER a match that already ended. This computes doors time relative
+     to kickoff instead, so it's correct for every fixture automatically. */
+  function doorsOpenTime(kickoffET, leadMinutes) {
+    if (!kickoffET || !leadMinutes) return null;
+    var match = /^(\d{1,2}):(\d{2})\s*([AP]M)$/i.exec(kickoffET.trim());
+    if (!match) return null;
+
+    var hour = parseInt(match[1], 10) % 12;
+    if (/PM/i.test(match[3])) hour += 12;
+    var minutes = hour * 60 + parseInt(match[2], 10) - leadMinutes;
+    minutes = ((minutes % 1440) + 1440) % 1440; // wrap past midnight, just in case
+
+    var h24 = Math.floor(minutes / 60);
+    var mm = minutes % 60;
+    var period = h24 >= 12 ? 'PM' : 'AM';
+    var h12 = h24 % 12 || 12;
+    return h12 + ':' + (mm < 10 ? '0' + mm : mm) + ' ' + period;
+  }
+
+  function show(f, doorsLead) {
     el.label.textContent = f.label || 'Next match';
     el.comp.textContent  = f.competition || '';
 
@@ -1062,6 +1085,8 @@ footer a{color:rgba(255,255,255,.82)}
 
     paint(el.teamA, order[0]);
     paint(el.teamB, order[1]);
+
+    var doors = doorsOpenTime(f.kickoffET, doorsLead);
 
     var bits = [];
     if (f.venue) bits.push(f.venue);

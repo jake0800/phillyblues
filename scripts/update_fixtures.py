@@ -8,7 +8,7 @@ WHAT THIS TOUCHES
         kickoffET   the kickoff time, in Philadelphia time
 
 WHAT THIS NEVER TOUCHES
-    label, note, venue, opponent, home, competition, doorsOpen, _README.
+    label, note, venue, opponent, home, competition, doorsOpenMinutesBefore, _README.
     Those are hand-written. If this script ever starts changing them,
     something is wrong.
 

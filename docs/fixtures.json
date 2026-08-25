@@ -6,12 +6,12 @@
     "home: true = Chelsea at Stamford Bridge. false = away.",
     "label: optional text on the left of the top bar. null shows \"Next match\".",
     "note: optional extra line, e.g. a fixture that may move.",
-    "doorsOpen: what time Cavanaugh's opens on matchday. PLACEHOLDER - replace with the real time.",
+    "doorsOpenMinutesBefore: how many minutes before kickoff doors open at Cavanaugh's. Applied to every fixture automatically. Replaces a fixed clock time (\"2:00 PM\") that was wrong for any kickoff before 2pm ET - i.e. most of them.",
     "Cup ties are not listed because opponents are not known until the draw. Add them by copying a block and setting the competition text.",
     "Source: chelseafc.com 2026/27 fixtures announcement. Kickoff times are released in waves - check Chelsea before each match."
   ],
   "season": "2026/27",
-  "doorsOpen": "2:00 PM",
+  "doorsOpenMinutesBefore": 30,
   "fixtures": [
     {
       "date": "2026-08-24",
