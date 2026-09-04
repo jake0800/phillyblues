@@ -11,6 +11,11 @@ phillyblues-preview-standalone.html
 phillyblues-review-desktop.png
 phillyblues-review-mobile.png
 
+# Original camera files for the gallery photos: full resolution, EXIF and GPS
+# intact. They stay on disk; the web-sized, stripped copies the site actually
+# serves live in docs/assets/.
+Website Photos/
+
 # Anything the site doesn't serve
 *.zip
 
