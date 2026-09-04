@@ -1,20 +1,18 @@
 name: Update fantasy standings
 
 # Pulls the Philly Blues mini-league standings from the public Fantasy
-# Premier League API and opens a pull request when they've changed. It
-# never commits to main by itself — you review the diff and merge.
+# Premier League API and commits them straight to main. GitHub Pages rebuilds
+# on its own from main, so the table on the site updates with no one in the
+# loop. Nothing to review, nothing to merge.
 #
-# SETUP, ONE TIME:
-#   Repo Settings -> Actions -> General -> Workflow permissions
-#     Tick "Allow GitHub Actions to create and approve pull requests"
-#   That's the only setup — the FPL standings API is public, so unlike the
-#   fixtures workflow there is no API token to add.
+# SETUP: none. The FPL standings API is public, so there is no token to add.
+# The job only needs "contents: write", granted below.
 #
 # TO TEST: Actions tab -> Update fantasy standings -> Run workflow.
 #
 # CADENCE: Tuesday mornings. Gameweeks usually finish Sunday/Monday, so a
 # Tuesday run picks up settled points. Harmless to run more often — it only
-# opens a PR when something actually changed.
+# commits when the standings actually changed.
 
 on:
   schedule:
@@ -24,7 +22,6 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
   update:
@@ -39,22 +36,19 @@ jobs:
       - name: Pull the latest standings
         run: python scripts/update_fantasy.py
 
-      - name: Open a pull request if anything changed
-        uses: peter-evans/create-pull-request@v7
-        with:
-          branch: fantasy/auto-update
-          delete-branch: true
-          commit-message: "Update fantasy standings from the FPL API"
-          title: "Fantasy standings have changed"
-          body: |
-            Automated pull of the Philly Blues mini-league from the Fantasy
-            Premier League API.
-
-            Only the data fields in `docs/fantasy.json` are touched —
-            `gameweek`, `updated`, `totalManagers`, and the top-10
-            `standings`. The hand-written identity fields (`leagueName`,
-            `leagueId`, `inviteUrl`, `standingsUrl`, `_README`) are left
-            alone, except `leagueName`, which is refreshed only if the API
-            returns a non-empty name.
-
-            Merging this publishes the new standings to the site.
+      - name: Publish to main if anything changed
+        run: |
+          if [ -z "$(git status --porcelain docs/fantasy.json)" ]; then
+            echo "Standings unchanged — nothing to publish."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/fantasy.json
+          git commit -m "Update fantasy standings from the FPL API"
+          git push || {
+            echo "Push rejected — main moved. Rebasing and retrying."
+            git pull --rebase origin main
+            git push
+          }
+          echo "Published new standings to main."
