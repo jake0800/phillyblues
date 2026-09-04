@@ -368,6 +368,29 @@ section{padding:clamp(3.5rem,7vw,5.5rem) 0}
 .media-pair figure{margin:0}
 @media(max-width:680px){.media-pair{grid-template-columns:1fr}}
 
+/* ---------- matchday gallery: rotating photos above the video ---------- */
+.gallery{margin:2.5rem 0 0}
+.gallery-frame{position:relative;aspect-ratio:16/9;background:var(--navy-deep);overflow:hidden}
+.gallery-frame img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .9s ease;
+}
+.gallery-frame img.is-active{opacity:1}
+.gallery-bar{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-top:.7rem}
+.gallery figcaption{
+  font-family:var(--data);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(11,17,25,.6);line-height:1.5;margin:0;
+}
+.gallery-dots{display:flex;gap:.5rem;flex-shrink:0}
+.gallery-dots button{
+  width:9px;height:9px;padding:0;border:1px solid rgba(3,70,148,.45);border-radius:50%;
+  background:transparent;cursor:pointer;transition:background .3s,border-color .3s;
+}
+.gallery-dots button[aria-current="true"]{background:var(--navy);border-color:var(--navy)}
+.gallery-dots button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(max-width:560px){.gallery-bar{flex-direction:column;align-items:flex-start;gap:.8rem}}
+@media(prefers-reduced-motion:reduce){.gallery-frame img{transition:none}}
+
 footer{background:var(--ink);color:rgba(255,255,255,.62);padding:3.5rem 0 2.5rem;font-size:.92rem}
 footer .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem}
 @media(max-width:760px){footer .cols{grid-template-columns:1fr;gap:1.8rem}}
@@ -508,6 +531,29 @@ footer a{color:rgba(255,255,255,.82)}
           </dl>
         </div>
       </div>
+
+      <figure class="gallery" aria-roledescription="carousel"
+              aria-label="The Philly Blues at Cavanaugh's, 30 August 2026">
+        <div class="gallery-frame">
+          <img src="assets/cav2026-banners.jpg" alt="Around fifteen Philly Blues members crowded behind two banners at the bar — a Union Jack Philly Blues flag and a St George's cross Philly Blues flag." fetchpriority="high" class="is-active" data-caption="Both flags out for Brighton. 30 August 2026.">
+          <img src="assets/cav2026-room-full.jpg" alt="The bar at Cavanaugh's Rittenhouse packed with supporters in blue Chelsea shirts watching the match on the screens above the bar. A chalkboard reads Welcome to Cavanaugh's, please seat yourself." loading="lazy" data-caption="A nine o'clock kickoff, and the room filled up anyway.">
+          <img src="assets/cav2026-room-wide.jpg" alt="A wide view of the room with tables and booths full, the Philly Blues flag hanging on the wall, and the match playing on the overhead screens." loading="lazy" data-caption="Every table taken, every screen on.">
+          <img src="assets/cav2026-flags.jpg" alt="Two Philly Blues flags hung on the wall between framed Philadelphia sports jerseys, with supporters watching the match nearby." loading="lazy" data-caption="Both flags up on the wall, where they belong.">
+          <img src="assets/cav2026-screen-room.jpg" alt="The Philly Blues website displayed on the large screen at one end of the bar, with the football playing on the screens to the right." loading="lazy" data-caption="Our own front page, up on the big screen.">
+          <img src="assets/cav2026-screen-close.jpg" alt="A close view of the Philly Blues homepage on the bar's screen, showing the We're back at Cavanaugh's Rittenhouse headline and the group crest." loading="lazy" data-caption="Cav's put the site up for the day.">
+        </div>
+        <div class="gallery-bar">
+          <figcaption id="gallery-caption">Both flags out for Brighton. 30 August 2026.</figcaption>
+          <div class="gallery-dots" role="group" aria-label="Choose a photo">
+            <button type="button" aria-label="Photo 1 of 6" aria-current="true"></button>
+            <button type="button" aria-label="Photo 2 of 6"></button>
+            <button type="button" aria-label="Photo 3 of 6"></button>
+            <button type="button" aria-label="Photo 4 of 6"></button>
+            <button type="button" aria-label="Photo 5 of 6"></button>
+            <button type="button" aria-label="Photo 6 of 6"></button>
+          </div>
+        </div>
+      </figure>
 
       <figure class="media-feature">
         <video controls preload="metadata" playsinline
@@ -1119,6 +1165,47 @@ footer a{color:rgba(255,255,255,.82)}
     node.textContent = team.name;
     node.className = team.opp ? 'team opp' : 'team';
   }
+})();
+</script>
+
+<script>
+/* Matchday gallery: crossfade every 5s. Pauses on hover, on keyboard focus,
+   and while the tab is hidden. Honours prefers-reduced-motion, and degrades to
+   a single still photo if this script never runs. */
+(function () {
+  var frame = document.querySelector('.gallery-frame');
+  if (!frame) return;
+  var imgs = Array.prototype.slice.call(frame.querySelectorAll('img'));
+  var dots = Array.prototype.slice.call(document.querySelectorAll('.gallery-dots button'));
+  var cap  = document.getElementById('gallery-caption');
+  var fig  = document.querySelector('.gallery');
+  var i = 0, timer = null;
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function show(n) {
+    i = (n + imgs.length) % imgs.length;
+    imgs.forEach(function (im, x) { im.classList.toggle('is-active', x === i); });
+    dots.forEach(function (d, x) {
+      x === i ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current');
+    });
+    cap.textContent = imgs[i].dataset.caption;
+  }
+  function start() { if (still || timer) return; timer = setInterval(function () { show(i + 1); }, 5000); }
+  function stop()  { clearInterval(timer); timer = null; }
+
+  dots.forEach(function (d, x) { d.addEventListener('click', function () { stop(); show(x); }); });
+  fig.addEventListener('mouseenter', stop);
+  fig.addEventListener('mouseleave', start);
+  fig.addEventListener('focusin', stop);
+  fig.addEventListener('focusout', start);
+  fig.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { stop(); show(i + 1); }
+    if (e.key === 'ArrowLeft')  { stop(); show(i - 1); }
+  });
+  document.addEventListener('visibilitychange', function () {
+    document.hidden ? stop() : start();
+  });
+  start();
 })();
 </script>
 
