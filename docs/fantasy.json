@@ -20,78 +20,78 @@
   "inviteUrl": "https://fantasy.premierleague.com/leagues/auto-join/hjvfhs",
   "standingsUrl": "https://fantasy.premierleague.com/en/leagues/588890/standings/c",
   "totalManagers": 50,
-  "gameweek": 1,
-  "updated": "2026-08-25",
+  "gameweek": 2,
+  "updated": "2026-09-01",
   "standings": [
     {
       "pos": 1,
-      "manager": "Aron Szoke",
-      "team": "John Terry’s Wives",
-      "gw": 94,
-      "total": 94
-    },
-    {
-      "pos": 2,
       "manager": "Adam Yelk",
       "team": "Philly_Blues_CFC",
-      "gw": 83,
-      "total": 83
+      "gw": 97,
+      "total": 180
     },
     {
       "pos": 2,
-      "manager": "Ken M",
-      "team": "Ken's Team",
-      "gw": 83,
-      "total": 83
+      "manager": "Jeremy Rose",
+      "team": "Big Ballers",
+      "gw": 107,
+      "total": 179
+    },
+    {
+      "pos": 3,
+      "manager": "Aron Szoke",
+      "team": "John Terry’s Wives",
+      "gw": 81,
+      "total": 175
     },
     {
       "pos": 4,
-      "manager": "Christopher DiDomenico",
-      "team": "Christopher's Team",
-      "gw": 82,
-      "total": 82
+      "manager": "Christopher Thorpe",
+      "team": "Boehly’s Xabi Ending",
+      "gw": 116,
+      "total": 172
     },
     {
       "pos": 5,
-      "manager": "Diana Ybarra",
-      "team": "Ybarza FC",
-      "gw": 79,
-      "total": 79
+      "manager": "Erik Hickman",
+      "team": "Dear João",
+      "gw": 113,
+      "total": 171
     },
     {
-      "pos": 5,
-      "manager": "Jedediah Folks",
-      "team": "Super Cold Bros",
-      "gw": 79,
-      "total": 79
+      "pos": 6,
+      "manager": "Michael Jacob",
+      "team": "Hazard Warning",
+      "gw": 108,
+      "total": 169
     },
     {
-      "pos": 5,
-      "manager": "Jr --",
-      "team": "CFC Yaw",
-      "gw": 79,
-      "total": 79
+      "pos": 7,
+      "manager": "Zach D",
+      "team": "Busquets n gravy",
+      "gw": 122,
+      "total": 165
     },
     {
-      "pos": 5,
-      "manager": "charles hagan",
-      "team": "Cold Coles",
-      "gw": 79,
-      "total": 79
+      "pos": 8,
+      "manager": "Taylor Beck",
+      "team": "Caicedo and Confused",
+      "gw": 112,
+      "total": 164
     },
     {
       "pos": 9,
-      "manager": "Scott Brant",
-      "team": "havent a kalou",
-      "gw": 75,
-      "total": 75
+      "manager": "Diana Ybarra",
+      "team": "Ybarza FC",
+      "gw": 84,
+      "total": 163
     },
     {
-      "pos": 10,
-      "manager": "Timothy Megaw",
-      "team": "Chelsea Rejects",
-      "gw": 74,
-      "total": 74
+      "pos": 9,
+      "manager": "Nathan Davis",
+      "team": "Back the Blues Team",
+      "gw": 106,
+      "total": 163
     }
   ]
 }
