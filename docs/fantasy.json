@@ -20,78 +20,78 @@
   "inviteUrl": "https://fantasy.premierleague.com/leagues/auto-join/hjvfhs",
   "standingsUrl": "https://fantasy.premierleague.com/en/leagues/588890/standings/c",
   "totalManagers": 50,
-  "gameweek": 2,
-  "updated": "2026-09-04",
+  "gameweek": 3,
+  "updated": "2026-09-08",
   "standings": [
     {
       "pos": 1,
-      "manager": "Adam Yelk",
-      "team": "Philly_Blues_CFC",
-      "gw": 97,
-      "total": 180
+      "manager": "Michael Jacob",
+      "team": "Hazard Warning",
+      "gw": 66,
+      "total": 235
     },
     {
       "pos": 2,
       "manager": "Jeremy Rose",
       "team": "Big Ballers",
-      "gw": 107,
-      "total": 179
+      "gw": 52,
+      "total": 231
     },
     {
       "pos": 3,
       "manager": "Aron Szoke",
       "team": "John Terry’s Wives",
-      "gw": 81,
-      "total": 175
+      "gw": 55,
+      "total": 230
     },
     {
-      "pos": 4,
-      "manager": "Christopher Thorpe",
-      "team": "Boehly’s Xabi Ending",
-      "gw": 116,
-      "total": 172
+      "pos": 3,
+      "manager": "Taylor Beck",
+      "team": "Caicedo and Confused",
+      "gw": 66,
+      "total": 230
     },
     {
       "pos": 5,
-      "manager": "Erik Hickman",
-      "team": "Dear João",
-      "gw": 113,
-      "total": 171
+      "manager": "Zach D",
+      "team": "Busquets n gravy",
+      "gw": 63,
+      "total": 228
     },
     {
       "pos": 6,
-      "manager": "Michael Jacob",
-      "team": "Hazard Warning",
-      "gw": 108,
-      "total": 169
+      "manager": "MIchael Hines Sr.",
+      "team": "Captain America",
+      "gw": 69,
+      "total": 228
     },
     {
       "pos": 7,
-      "manager": "Zach D",
-      "team": "Busquets n gravy",
-      "gw": 122,
-      "total": 165
+      "manager": "Nathan Davis",
+      "team": "Back the Blues Team",
+      "gw": 56,
+      "total": 219
     },
     {
       "pos": 8,
-      "manager": "Taylor Beck",
-      "team": "Caicedo and Confused",
-      "gw": 112,
-      "total": 164
+      "manager": "Adam Yelk",
+      "team": "Philly_Blues_CFC",
+      "gw": 38,
+      "total": 218
     },
     {
       "pos": 9,
-      "manager": "Diana Ybarra",
-      "team": "Ybarza FC",
-      "gw": 84,
-      "total": 163
+      "manager": "Scott Brant",
+      "team": "havent a kalou",
+      "gw": 66,
+      "total": 216
     },
     {
       "pos": 9,
-      "manager": "Nathan Davis",
-      "team": "Back the Blues Team",
-      "gw": 106,
-      "total": 163
+      "manager": "Christopher Thorpe",
+      "team": "Boehly’s Xabi Ending",
+      "gw": 44,
+      "total": 216
     }
   ]
 }
