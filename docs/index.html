@@ -419,6 +419,9 @@ footer a{color:rgba(255,255,255,.82)}
   html{scroll-behavior:auto}
 }
 </style>
+<link rel="stylesheet" href="assets/mobile-signup.css">
+<script defer src="assets/signup.js"></script>
+<noscript><style>@media(max-width:820px){header nav{display:flex;position:static;flex-wrap:wrap;gap:.5rem;padding:.5rem 0}header .wrap{height:auto;flex-wrap:wrap}header nav .hide-sm{display:block}}</style></noscript>
 </head>
 <body>
 
@@ -428,12 +431,13 @@ footer a{color:rgba(255,255,255,.82)}
       <img src="assets/crest-knockout.png" alt="">
       <span>Philly Blues</span>
     </a>
-    <nav>
+    <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" hidden>Menu ☰</button>
+    <nav id="site-navigation" aria-label="Main navigation">
       <a href="#venue" class="hide-sm">Back home</a>
       <a href="#about" class="hide-sm">About</a>
       <a href="#fantasy" class="hide-sm">Fantasy</a>
       <a href="#membership" class="hide-sm">Membership</a>
-      <a href="#join" class="join">Join</a>
+      <a href="#join" class="join" data-signup-type="matchday_emails" data-placement="header">Join</a>
     </nav>
   </div>
 </header>
@@ -446,7 +450,10 @@ footer a{color:rgba(255,255,255,.82)}
       <div>
         <span class="flag eyebrow"><span class="dot"></span> Back home · 2026/27</span>
         <p class="hero-pre">We're back at</p>
-        <h1>Cavanaugh's Rittenhouse</h1>
+        <p class="mobile-only mobile-eyebrow">CHELSEA SUPPORTERS · PHILADELPHIA</p>
+        <h1><span class="desktop-only">Cavanaugh's Rittenhouse</span><span class="mobile-only">Your club.<br>Your city.<br><em>Your matchday.</em></span></h1>
+        <p class="mobile-only mobile-intro">Watch Chelsea with the Philly Blues at Cavanaugh’s Rittenhouse.</p>
+        <p class="mobile-only mobile-welcome">Everyone welcome. No membership needed.</p>
         <p class="kicker">
           Cav's was our temporary home in 2020/21 — the season Chelsea won the Champions
           League. It's since moved a block and been rebuilt from the ground up. We're back
@@ -464,32 +471,40 @@ footer a{color:rgba(255,255,255,.82)}
   </div>
 
   <!-- ============== SIGNATURE: MATCHDAY CARD ============== -->
-  <div class="fixture-zone">
+  <div class="fixture-zone" id="next-match">
     <div class="wrap">
       <div class="fixture">
         <!-- The text below is the FALLBACK. The script at the end of this file
              replaces it with the next fixture from fixtures.json. If that script
              or that file ever fails, whatever is written here is what shows. -->
         <div class="fixture-rail">
-          <span id="fx-label">First match back</span>
+          <span id="fx-label">Next match</span>
           <span class="sep">/</span>
-          <span id="fx-comp">Premier League · Matchweek 1</span>
+          <span id="fx-comp">Check match details</span>
         </div>
         <div class="fixture-body">
+          <p class="mobile-only mobile-fixture-date"><span id="fx-mobile-date">Date to be confirmed</span> · <span id="fx-mobile-time">Time TBC</span></p>
           <div>
             <div class="tie">
-              <span class="team opp" id="fx-team-a">Fulham</span>
+              <span class="team" id="fx-team-a">Chelsea</span>
               <span class="v">v</span>
-              <span class="team" id="fx-team-b">Chelsea</span>
-              <div class="tie-meta" id="fx-meta">Craven Cottage · Doors at Cavanaugh's from 2:00 PM</div>
+              <span class="team opp" id="fx-team-b">TBC</span>
+              <div class="tie-meta" id="fx-meta">Please contact the group for the next match and doors time.</div>
             </div>
           </div>
           <div class="kickoff">
-            <div class="t" id="fx-time">3:00 PM</div>
-            <div class="d" id="fx-date">Mon 24 Aug 2026 · ET</div>
+            <div class="t" id="fx-time">TBC</div>
+            <div class="d" id="fx-date">Date to be confirmed</div>
             <p style="margin:1.4rem 0 0">
-              <a class="btn btn-gold" href="#join">Come watch with us</a>
+              <a class="btn btn-gold" href="#venue">Come watch with us</a>
             </p>
+          </div>
+          <div class="mobile-only mobile-fixture-details">
+            <p id="fx-mobile-doors">Doors time to be confirmed.</p>
+            <p id="fx-mobile-note" class="mobile-fixture-note" hidden></p>
+            <div class="mobile-venue-address"><strong>Cavanaugh’s Rittenhouse</strong><span>1921 Sansom St, Philadelphia</span></div>
+            <a class="btn btn-gold" data-placement="match_card" href="https://www.google.com/maps/search/?api=1&amp;query=Cavanaugh%27s+Rittenhouse+1921+Sansom+St+Philadelphia" target="_blank" rel="noopener">Get directions ↗</a>
+            <a class="mobile-email-link" href="#join" data-signup-type="matchday_emails" data-placement="match_card">Get matchday emails →</a>
           </div>
         </div>
       </div>
@@ -502,7 +517,7 @@ footer a{color:rgba(255,255,255,.82)}
       <p class="rule-label">Back at Cav's</p>
       <div class="two-col">
         <div>
-          <h2>A proper room for a proper support</h2>
+          <h2><span class="desktop-only">A proper room for a proper support</span><span class="mobile-only">First time at Cav’s?</span></h2>
           <p>
             Cavanaugh's Rittenhouse sits just off Rittenhouse Square in Center City — walkable,
             transit-friendly, and built for watching football. Every match on, sound up for
@@ -525,7 +540,7 @@ footer a{color:rgba(255,255,255,.82)}
           <dl>
             <div><dt>Where</dt><dd>Cavanaugh's Rittenhouse<br>1921 Sansom St, Philadelphia, PA 19103</dd></div>
             <div><dt>When</dt><dd>Every Chelsea match, home and away</dd></div>
-            <div><dt>Arrive</dt><dd>Roughly an hour before kickoff</dd></div>
+            <div><dt>Arrive</dt><dd>Check the doors time on the next-match card</dd></div>
             <div><dt>Look for</dt><dd>The Philly Blues banner</dd></div>
             <div><dt>Questions</dt><dd><a href="mailto:phillyblues2010@gmail.com">phillyblues2010@gmail.com</a></dd></div>
           </dl>
@@ -851,9 +866,9 @@ footer a{color:rgba(255,255,255,.82)}
         <div>
           <h2>Get on the list</h2>
           <p>
-            Interested in joining? Send us your details and we'll be in touch with membership
-            information. If you just want to know when the next match is on, say so — we'll add
-            you to the matchday emails and leave it at that.
+            Get kickoff times, plans at Cav’s, and news from the group. Choose matchday emails
+            for updates, or membership information if you’d like to affiliate with the Philly Blues.
+            You don’t need a membership to come watch.
           </p>
           <p>
             You can also reach us any time at
@@ -861,46 +876,28 @@ footer a{color:rgba(255,255,255,.82)}
           </p>
         </div>
 
-        <!-- FORM: GitHub Pages cannot process submissions itself, so this posts to
-             Formspree, which emails the result on.
-
-             Endpoint: form "Philly Blues — Join", Formspree account jake0800@gmail.com.
-             Free tier: 50 submissions per month, 30 days of history in the dashboard.
-             The notification emails are the real record — do not rely on the dashboard.
-
-             BEFORE LAUNCH: submissions currently go to Jake personally. Add
-             phillyblues2010@gmail.com as a linked email in Formspree, have someone with
-             that inbox click the verification link, then switch this form's recipient. -->
-        <form action="https://formspree.io/f/xljrnona" method="POST">
-          <div class="form-grid">
-            <div class="field">
-              <label for="fname">First name</label>
-              <input id="fname" name="first_name" type="text" autocomplete="given-name" required>
+        <div>
+          <form id="join-form" action="https://formspree.io/f/xljrnona" method="POST">
+            <fieldset class="signup-options">
+              <legend>What would you like?</legend>
+              <label><input type="radio" name="signup_type" value="matchday_emails" checked> Matchday emails</label>
+              <label><input type="radio" name="signup_type" value="membership"> Membership information</label>
+            </fieldset>
+            <div class="field"><label for="fname">First name <span id="first-name-optional">(optional)</span></label><input id="fname" name="first_name" type="text" autocomplete="given-name"></div>
+            <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+            <div id="membership-fields">
+              <div class="field"><label for="lname">Last name</label><input id="lname" name="last_name" type="text" autocomplete="family-name"></div>
+              <details class="signup-extra"><summary>Add membership details (optional)</summary>
+                <div class="field"><label for="trueblue">Chelsea membership number</label><input id="trueblue" name="true_blue_number" type="text" inputmode="numeric" autocomplete="off"><span class="hint">Leave blank if you’re not a Chelsea member yet.</span></div>
+                <div class="field"><label for="msg">Anything we should know?</label><textarea id="msg" name="message" rows="3"></textarea></div>
+              </details>
             </div>
-            <div class="field">
-              <label for="lname">Last name</label>
-              <input id="lname" name="last_name" type="text" autocomplete="family-name" required>
-            </div>
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
-          </div>
-          <div class="field">
-            <label for="trueblue">Chelsea True Blue number</label>
-            <input id="trueblue" name="true_blue_number" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g. 12345678">
-            <span class="hint">Optional — add it if you're a Chelsea member. Leave blank if you're not.</span>
-          </div>
-          <div class="field">
-            <label for="msg">Message</label>
-            <textarea id="msg" name="message" placeholder="Tell us a bit about yourself — how long you've supported Chelsea, whether you're after membership or just matchdays."></textarea>
-          </div>
-          <label class="check">
-            <input type="checkbox" name="newsletter" value="yes">
-            <span>Add me to matchday emails and group news.</span>
-          </label>
-          <button class="btn btn-primary" type="submit">Send</button>
-        </form>
+            <label class="check"><input id="newsletter" type="checkbox" name="newsletter" value="yes"><span>Yes, send me matchday emails and group news.</span></label>
+            <button class="btn btn-primary signup-submit" type="submit">Send my signup request</button>
+            <p class="signup-privacy">Your details go to the Philly Blues to handle your request. Membership with the group is free.</p>
+          </form>
+          <div id="signup-status" class="signup-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+        </div>
       </div>
     </div>
   </section>
@@ -1149,6 +1146,11 @@ footer a{color:rgba(255,255,255,.82)}
       weekday: 'short', day: 'numeric', month: 'short', year: 'numeric'
     }).replace(',', '');
     el.date.textContent = f.kickoffET ? pretty + ' · ET' : pretty;
+    document.getElementById('fx-mobile-date').textContent = pretty;
+    document.getElementById('fx-mobile-time').textContent = f.kickoffET ? f.kickoffET + ' ET' : 'Time TBC';
+    document.getElementById('fx-mobile-doors').textContent = doors ? 'Doors at Cav’s: ' + doors + ' ET' : 'Doors time to be confirmed.';
+    var note = document.getElementById('fx-mobile-note');
+    note.textContent = f.note || ''; note.hidden = !f.note;
   }
 
   function showNothingLeft() {
@@ -1156,7 +1158,7 @@ footer a{color:rgba(255,255,255,.82)}
     el.comp.textContent  = 'To be confirmed';
     paint(el.teamA, { name: 'Chelsea', opp: false });
     paint(el.teamB, { name: 'TBC',     opp: true  });
-    el.meta.textContent = 'The season has finished. New fixtures are usually released in June.';
+    el.meta.textContent = 'The next match is not listed yet. Contact the group for details.';
     el.time.textContent = 'TBC';
     el.date.textContent = '';
   }
@@ -1179,6 +1181,10 @@ footer a{color:rgba(255,255,255,.82)}
   var dots = Array.prototype.slice.call(document.querySelectorAll('.gallery-dots button'));
   var cap  = document.getElementById('gallery-caption');
   var fig  = document.querySelector('.gallery');
+  var pause = document.createElement('button');
+  pause.type = 'button'; pause.className = 'gallery-pause'; pause.textContent = 'Pause photos';
+  pause.setAttribute('aria-pressed', 'false'); fig.querySelector('.gallery-bar').appendChild(pause);
+  var paused = false;
   var i = 0, timer = null;
   var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -1190,9 +1196,15 @@ footer a{color:rgba(255,255,255,.82)}
     });
     cap.textContent = imgs[i].dataset.caption;
   }
-  function start() { if (still || timer) return; timer = setInterval(function () { show(i + 1); }, 5000); }
+  function start() { if (still || paused || timer || document.hidden) return; timer = setInterval(function () { show(i + 1); }, 5000); }
   function stop()  { clearInterval(timer); timer = null; }
 
+  pause.addEventListener('click', function () {
+    paused = !paused; pause.setAttribute('aria-pressed', String(paused));
+    pause.textContent = paused ? 'Play photos' : 'Pause photos';
+    if (paused) stop(); else start();
+  });
+  if (still) pause.hidden = true;
   dots.forEach(function (d, x) { d.addEventListener('click', function () { stop(); show(x); }); });
   fig.addEventListener('mouseenter', stop);
   fig.addEventListener('mouseleave', start);
