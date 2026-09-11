@@ -174,11 +174,11 @@
       "note": null
     },
     {
-      "date": "2026-12-26",
+      "date": "2026-12-27",
       "opponent": "Coventry City",
       "home": false,
       "venue": "Coventry Building Society Arena",
-      "kickoffET": "10:00 AM",
+      "kickoffET": "9:00 AM",
       "competition": "Premier League · Matchweek 17",
       "label": null,
       "note": null
@@ -188,17 +188,17 @@
       "opponent": "Ipswich Town",
       "home": false,
       "venue": "Portman Road",
-      "kickoffET": "3:00 PM",
+      "kickoffET": "3:15 PM",
       "competition": "Premier League · Matchweek 18",
       "label": null,
       "note": null
     },
     {
-      "date": "2027-01-02",
+      "date": "2027-01-03",
       "opponent": "Newcastle United",
       "home": true,
       "venue": "Stamford Bridge",
-      "kickoffET": "10:00 AM",
+      "kickoffET": "9:00 AM",
       "competition": "Premier League · Matchweek 19",
       "label": null,
       "note": null
@@ -208,7 +208,7 @@
       "opponent": "Crystal Palace",
       "home": false,
       "venue": "Selhurst Park",
-      "kickoffET": "3:00 PM",
+      "kickoffET": "2:30 PM",
       "competition": "Premier League · Matchweek 20",
       "label": null,
       "note": null
