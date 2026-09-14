@@ -319,10 +319,11 @@ section{padding:clamp(3.5rem,7vw,5.5rem) 0}
 .check{display:flex;gap:.7rem;align-items:flex-start;margin-bottom:1.5rem;font-size:.92rem}
 .check input{margin-top:.3rem;width:16px;height:16px;flex:none;accent-color:var(--navy)}
 
-/* Official Supporters Club badge — Chelsea-issued logo, shown unaltered on its
-   own Reflex Blue (#001489) so the artwork sits on a plain, matching field. */
+/* Official Supporters Club badge — current Chelsea-issued lockup, shown unaltered on a
+   framed Reflex Blue (#001489) plate so the artwork sits on a plain, matching field. */
 .osc-card{border:1px solid rgba(3,70,148,.16)}
-.osc-card img{display:block;width:100%;height:auto;background:var(--chelsea-blue)}
+.osc-plate{background:var(--chelsea-blue);padding:2.2rem 3rem}
+.osc-plate img{display:block;width:100%;height:auto}
 .osc-card figcaption{
   background:var(--chelsea-blue);color:rgba(255,255,255,.7);
   font-family:var(--data);font-size:.66rem;letter-spacing:.14em;
@@ -619,8 +620,10 @@ footer a{color:rgba(255,255,255,.82)}
         </div>
         <div>
           <figure class="osc-card" style="margin:0">
-            <img src="assets/osc-logo.jpg"
-                 alt="Chelsea Football Club Official Supporters Club logo — Philly Blues">
+            <div class="osc-plate">
+              <img src="assets/osc-lockup-white.png"
+                   alt="Chelsea FC Official Supporters Club lockup — Philly Blues">
+            </div>
             <figcaption>Issued by Chelsea Football Club</figcaption>
           </figure>
         </div>
