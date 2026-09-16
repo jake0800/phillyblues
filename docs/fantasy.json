@@ -20,78 +20,78 @@
   "inviteUrl": "https://fantasy.premierleague.com/leagues/auto-join/hjvfhs",
   "standingsUrl": "https://fantasy.premierleague.com/en/leagues/588890/standings/c",
   "totalManagers": 50,
-  "gameweek": 3,
-  "updated": "2026-09-08",
+  "gameweek": 4,
+  "updated": "2026-09-15",
   "standings": [
     {
       "pos": 1,
       "manager": "Michael Jacob",
       "team": "Hazard Warning",
-      "gw": 66,
-      "total": 235
+      "gw": 90,
+      "total": 325
     },
     {
       "pos": 2,
-      "manager": "Jeremy Rose",
-      "team": "Big Ballers",
-      "gw": 52,
-      "total": 231
-    },
-    {
-      "pos": 3,
-      "manager": "Aron Szoke",
-      "team": "John Terry’s Wives",
-      "gw": 55,
-      "total": 230
-    },
-    {
-      "pos": 3,
       "manager": "Taylor Beck",
       "team": "Caicedo and Confused",
-      "gw": 66,
-      "total": 230
+      "gw": 92,
+      "total": 322
     },
     {
-      "pos": 5,
-      "manager": "Zach D",
-      "team": "Busquets n gravy",
-      "gw": 63,
-      "total": 228
+      "pos": 3,
+      "manager": "MIchael Hines Sr.",
+      "team": "Captain America",
+      "gw": 80,
+      "total": 308
+    },
+    {
+      "pos": 4,
+      "manager": "Jeremy Rose",
+      "team": "Big Ballers",
+      "gw": 75,
+      "total": 306
+    },
+    {
+      "pos": 4,
+      "manager": "Jerry Oleszczyk",
+      "team": "Diamond's Dogs",
+      "gw": 101,
+      "total": 306
     },
     {
       "pos": 6,
-      "manager": "MIchael Hines Sr.",
-      "team": "Captain America",
-      "gw": 69,
-      "total": 228
+      "manager": "Christopher Thorpe",
+      "team": "Boehly’s Xabi Ending",
+      "gw": 88,
+      "total": 304
     },
     {
       "pos": 7,
-      "manager": "Nathan Davis",
-      "team": "Back the Blues Team",
-      "gw": 56,
-      "total": 219
+      "manager": "Aron Szoke",
+      "team": "John Terry’s Wives",
+      "gw": 74,
+      "total": 304
     },
     {
       "pos": 8,
-      "manager": "Adam Yelk",
-      "team": "Philly_Blues_CFC",
-      "gw": 38,
-      "total": 218
+      "manager": "G  X",
+      "team": "CRASH ★",
+      "gw": 89,
+      "total": 298
     },
     {
       "pos": 9,
-      "manager": "Scott Brant",
-      "team": "havent a kalou",
-      "gw": 66,
-      "total": 216
+      "manager": "Jr --",
+      "team": "CFC Yaw",
+      "gw": 96,
+      "total": 296
     },
     {
-      "pos": 9,
-      "manager": "Christopher Thorpe",
-      "team": "Boehly’s Xabi Ending",
-      "gw": 44,
-      "total": 216
+      "pos": 10,
+      "manager": "Zach D",
+      "team": "Busquets n gravy",
+      "gw": 67,
+      "total": 295
     }
   ]
 }
