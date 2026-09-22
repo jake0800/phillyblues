@@ -20,78 +20,78 @@
   "inviteUrl": "https://fantasy.premierleague.com/leagues/auto-join/hjvfhs",
   "standingsUrl": "https://fantasy.premierleague.com/en/leagues/588890/standings/c",
   "totalManagers": 50,
-  "gameweek": 4,
-  "updated": "2026-09-15",
+  "gameweek": 5,
+  "updated": "2026-09-22",
   "standings": [
     {
       "pos": 1,
-      "manager": "Michael Jacob",
-      "team": "Hazard Warning",
-      "gw": 90,
-      "total": 325
+      "manager": "Taylor Beck",
+      "team": "Caicedo and Confused",
+      "gw": 55,
+      "total": 377
     },
     {
       "pos": 2,
-      "manager": "Taylor Beck",
-      "team": "Caicedo and Confused",
-      "gw": 92,
-      "total": 322
+      "manager": "Michael Jacob",
+      "team": "Hazard Warning",
+      "gw": 52,
+      "total": 377
     },
     {
       "pos": 3,
       "manager": "MIchael Hines Sr.",
       "team": "Captain America",
-      "gw": 80,
-      "total": 308
+      "gw": 65,
+      "total": 373
     },
     {
       "pos": 4,
-      "manager": "Jeremy Rose",
-      "team": "Big Ballers",
-      "gw": 75,
-      "total": 306
+      "manager": "Obaololade Dharay",
+      "team": "dharayking",
+      "gw": 66,
+      "total": 358
     },
     {
-      "pos": 4,
-      "manager": "Jerry Oleszczyk",
-      "team": "Diamond's Dogs",
-      "gw": 101,
-      "total": 306
+      "pos": 5,
+      "manager": "Gerald McKim",
+      "team": "raldinho",
+      "gw": 70,
+      "total": 356
     },
     {
       "pos": 6,
-      "manager": "Christopher Thorpe",
-      "team": "Boehly’s Xabi Ending",
-      "gw": 88,
-      "total": 304
+      "manager": "Owen Magee",
+      "team": "Magowen's Team",
+      "gw": 59,
+      "total": 349
     },
     {
       "pos": 7,
-      "manager": "Aron Szoke",
-      "team": "John Terry’s Wives",
-      "gw": 74,
-      "total": 304
+      "manager": "Jr --",
+      "team": "CFC Yaw",
+      "gw": 53,
+      "total": 349
     },
     {
       "pos": 8,
-      "manager": "G  X",
-      "team": "CRASH ★",
-      "gw": 89,
-      "total": 298
+      "manager": "Jerry Oleszczyk",
+      "team": "Diamond's Dogs",
+      "gw": 42,
+      "total": 348
     },
     {
       "pos": 9,
-      "manager": "Jr --",
-      "team": "CFC Yaw",
-      "gw": 96,
-      "total": 296
+      "manager": "Aron Szoke",
+      "team": "John Terry’s Wives",
+      "gw": 43,
+      "total": 347
     },
     {
       "pos": 10,
-      "manager": "Zach D",
-      "team": "Busquets n gravy",
-      "gw": 67,
-      "total": 295
+      "manager": "G  X",
+      "team": "CRASH ★",
+      "gw": 48,
+      "total": 346
     }
   ]
 }
