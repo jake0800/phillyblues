@@ -20,78 +20,78 @@
   "inviteUrl": "https://fantasy.premierleague.com/leagues/auto-join/hjvfhs",
   "standingsUrl": "https://fantasy.premierleague.com/en/leagues/588890/standings/c",
   "totalManagers": 50,
-  "gameweek": 5,
-  "updated": "2026-10-06",
+  "gameweek": 6,
+  "updated": "2026-10-13",
   "standings": [
     {
       "pos": 1,
       "manager": "Taylor Beck",
       "team": "Caicedo and Confused",
-      "gw": 55,
-      "total": 377
+      "gw": 88,
+      "total": 465
     },
     {
       "pos": 2,
       "manager": "Michael Jacob",
       "team": "Hazard Warning",
-      "gw": 52,
-      "total": 377
+      "gw": 82,
+      "total": 459
     },
     {
       "pos": 3,
-      "manager": "MIchael Hines Sr.",
-      "team": "Captain America",
-      "gw": 65,
-      "total": 373
+      "manager": "G  X",
+      "team": "CRASH ★",
+      "gw": 84,
+      "total": 430
     },
     {
       "pos": 4,
-      "manager": "Obaololade Dharay",
-      "team": "dharayking",
-      "gw": 66,
-      "total": 358
+      "manager": "Gerald McKim",
+      "team": "raldinho",
+      "gw": 74,
+      "total": 430
     },
     {
       "pos": 5,
-      "manager": "Gerald McKim",
-      "team": "raldinho",
-      "gw": 70,
-      "total": 356
+      "manager": "Owen Magee",
+      "team": "Magowen's Team",
+      "gw": 80,
+      "total": 429
     },
     {
       "pos": 6,
-      "manager": "Owen Magee",
-      "team": "Magowen's Team",
-      "gw": 59,
-      "total": 349
+      "manager": "Obaololade Dharay",
+      "team": "dharayking",
+      "gw": 68,
+      "total": 426
     },
     {
-      "pos": 7,
-      "manager": "Jr --",
-      "team": "CFC Yaw",
-      "gw": 53,
-      "total": 349
+      "pos": 6,
+      "manager": "Nathan Davis",
+      "team": "Back the Blues Team",
+      "gw": 87,
+      "total": 426
     },
     {
       "pos": 8,
       "manager": "Jerry Oleszczyk",
       "team": "Diamond's Dogs",
-      "gw": 42,
-      "total": 348
+      "gw": 77,
+      "total": 425
     },
     {
       "pos": 9,
-      "manager": "Aron Szoke",
-      "team": "John Terry’s Wives",
-      "gw": 43,
-      "total": 347
+      "manager": "Jr --",
+      "team": "CFC Yaw",
+      "gw": 75,
+      "total": 424
     },
     {
       "pos": 10,
-      "manager": "G  X",
-      "team": "CRASH ★",
-      "gw": 48,
-      "total": 346
+      "manager": "MIchael Hines Sr.",
+      "team": "Captain America",
+      "gw": 47,
+      "total": 420
     }
   ]
 }
