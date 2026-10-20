@@ -20,78 +20,78 @@
   "inviteUrl": "https://fantasy.premierleague.com/leagues/auto-join/hjvfhs",
   "standingsUrl": "https://fantasy.premierleague.com/en/leagues/588890/standings/c",
   "totalManagers": 50,
-  "gameweek": 6,
-  "updated": "2026-10-13",
+  "gameweek": 7,
+  "updated": "2026-10-20",
   "standings": [
     {
       "pos": 1,
-      "manager": "Taylor Beck",
-      "team": "Caicedo and Confused",
-      "gw": 88,
-      "total": 465
+      "manager": "Michael Jacob",
+      "team": "Hazard Warning",
+      "gw": 74,
+      "total": 533
     },
     {
       "pos": 2,
-      "manager": "Michael Jacob",
-      "team": "Hazard Warning",
-      "gw": 82,
-      "total": 459
+      "manager": "Taylor Beck",
+      "team": "Caicedo and Confused",
+      "gw": 66,
+      "total": 531
     },
     {
       "pos": 3,
       "manager": "G  X",
       "team": "CRASH ★",
-      "gw": 84,
-      "total": 430
+      "gw": 71,
+      "total": 501
     },
     {
       "pos": 4,
       "manager": "Gerald McKim",
       "team": "raldinho",
-      "gw": 74,
-      "total": 430
+      "gw": 70,
+      "total": 500
     },
     {
       "pos": 5,
-      "manager": "Owen Magee",
-      "team": "Magowen's Team",
-      "gw": 80,
-      "total": 429
-    },
-    {
-      "pos": 6,
-      "manager": "Obaololade Dharay",
-      "team": "dharayking",
-      "gw": 68,
-      "total": 426
+      "manager": "Jerry Oleszczyk",
+      "team": "Diamond's Dogs",
+      "gw": 74,
+      "total": 499
     },
     {
       "pos": 6,
       "manager": "Nathan Davis",
       "team": "Back the Blues Team",
-      "gw": 87,
-      "total": 426
+      "gw": 69,
+      "total": 495
+    },
+    {
+      "pos": 7,
+      "manager": "Obaololade Dharay",
+      "team": "dharayking",
+      "gw": 67,
+      "total": 493
     },
     {
       "pos": 8,
-      "manager": "Jerry Oleszczyk",
-      "team": "Diamond's Dogs",
-      "gw": 77,
-      "total": 425
+      "manager": "Owen Magee",
+      "team": "Magowen's Team",
+      "gw": 57,
+      "total": 486
     },
     {
       "pos": 9,
-      "manager": "Jr --",
-      "team": "CFC Yaw",
-      "gw": 75,
-      "total": 424
+      "manager": "MIchael Hines Sr.",
+      "team": "Captain America",
+      "gw": 64,
+      "total": 484
     },
     {
       "pos": 10,
-      "manager": "MIchael Hines Sr.",
-      "team": "Captain America",
-      "gw": 47,
-      "total": 420
+      "manager": "Rick Mortimer",
+      "team": "Mort's Machine",
+      "gw": 66,
+      "total": 482
     }
   ]
 }
