@@ -138,7 +138,7 @@
       "opponent": "Crystal Palace",
       "home": true,
       "venue": "Stamford Bridge",
-      "kickoffET": "3:00 PM",
+      "kickoffET": "2:30 PM",
       "competition": "Premier League · Matchweek 13",
       "label": null,
       "note": null
@@ -148,7 +148,7 @@
       "opponent": "Liverpool",
       "home": true,
       "venue": "Stamford Bridge",
-      "kickoffET": "10:00 AM",
+      "kickoffET": "7:30 AM",
       "competition": "Premier League · Matchweek 14",
       "label": null,
       "note": null
@@ -158,17 +158,17 @@
       "opponent": "Manchester City",
       "home": false,
       "venue": "Etihad Stadium",
-      "kickoffET": "10:00 AM",
+      "kickoffET": "12:30 PM",
       "competition": "Premier League · Matchweek 15",
       "label": null,
       "note": null
     },
     {
-      "date": "2026-12-19",
+      "date": "2026-12-21",
       "opponent": "Aston Villa",
       "home": true,
       "venue": "Stamford Bridge",
-      "kickoffET": "10:00 AM",
+      "kickoffET": "3:00 PM",
       "competition": "Premier League · Matchweek 16",
       "label": null,
       "note": null
