@@ -20,78 +20,78 @@
   "inviteUrl": "https://fantasy.premierleague.com/leagues/auto-join/hjvfhs",
   "standingsUrl": "https://fantasy.premierleague.com/en/leagues/588890/standings/c",
   "totalManagers": 50,
-  "gameweek": 7,
-  "updated": "2026-10-20",
+  "gameweek": 8,
+  "updated": "2026-10-27",
   "standings": [
     {
       "pos": 1,
-      "manager": "Michael Jacob",
-      "team": "Hazard Warning",
-      "gw": 74,
-      "total": 533
+      "manager": "Taylor Beck",
+      "team": "Caicedo and Confused",
+      "gw": 46,
+      "total": 577
     },
     {
       "pos": 2,
-      "manager": "Taylor Beck",
-      "team": "Caicedo and Confused",
-      "gw": 66,
-      "total": 531
+      "manager": "Michael Jacob",
+      "team": "Hazard Warning",
+      "gw": 37,
+      "total": 570
     },
     {
       "pos": 3,
-      "manager": "G  X",
-      "team": "CRASH ★",
-      "gw": 71,
-      "total": 501
-    },
-    {
-      "pos": 4,
       "manager": "Gerald McKim",
       "team": "raldinho",
-      "gw": 70,
-      "total": 500
+      "gw": 52,
+      "total": 552
+    },
+    {
+      "pos": 3,
+      "manager": "Jerry Oleszczyk",
+      "team": "Diamond's Dogs",
+      "gw": 53,
+      "total": 552
     },
     {
       "pos": 5,
-      "manager": "Jerry Oleszczyk",
-      "team": "Diamond's Dogs",
-      "gw": 74,
-      "total": 499
+      "manager": "G  X",
+      "team": "CRASH ★",
+      "gw": 44,
+      "total": 545
     },
     {
       "pos": 6,
-      "manager": "Nathan Davis",
-      "team": "Back the Blues Team",
-      "gw": 69,
-      "total": 495
+      "manager": "Obaololade Dharay",
+      "team": "dharayking",
+      "gw": 44,
+      "total": 537
     },
     {
       "pos": 7,
-      "manager": "Obaololade Dharay",
-      "team": "dharayking",
-      "gw": 67,
-      "total": 493
+      "manager": "Christopher Thorpe",
+      "team": "Boehly’s Xabi Ending",
+      "gw": 56,
+      "total": 532
     },
     {
       "pos": 8,
-      "manager": "Owen Magee",
-      "team": "Magowen's Team",
-      "gw": 57,
-      "total": 486
+      "manager": "Zach D",
+      "team": "Busquets n gravy",
+      "gw": 56,
+      "total": 531
     },
     {
       "pos": 9,
-      "manager": "MIchael Hines Sr.",
-      "team": "Captain America",
-      "gw": 64,
-      "total": 484
+      "manager": "Nathan Davis",
+      "team": "Back the Blues Team",
+      "gw": 27,
+      "total": 522
     },
     {
       "pos": 10,
       "manager": "Rick Mortimer",
       "team": "Mort's Machine",
-      "gw": 66,
-      "total": 482
+      "gw": 40,
+      "total": 522
     }
   ]
 }
