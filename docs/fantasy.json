@@ -21,7 +21,7 @@
   "standingsUrl": "https://fantasy.premierleague.com/en/leagues/588890/standings/c",
   "totalManagers": 50,
   "gameweek": 10,
-  "updated": "2026-11-10",
+  "updated": "2026-11-17",
   "standings": [
     {
       "pos": 1,
@@ -53,7 +53,7 @@
     },
     {
       "pos": 5,
-      "manager": "G  X",
+      "manager": "G X",
       "team": "CRASH ★",
       "gw": 60,
       "total": 670
