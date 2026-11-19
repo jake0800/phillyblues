@@ -224,11 +224,11 @@
       "note": null
     },
     {
-      "date": "2027-01-23",
+      "date": "2027-01-25",
       "opponent": "Leeds United",
       "home": false,
       "venue": "Elland Road",
-      "kickoffET": "10:00 AM",
+      "kickoffET": "3:00 PM",
       "competition": "Premier League · Matchweek 22",
       "label": null,
       "note": null
@@ -238,7 +238,7 @@
       "opponent": "Nottingham Forest",
       "home": true,
       "venue": "Stamford Bridge",
-      "kickoffET": "10:00 AM",
+      "kickoffET": "12:30 PM",
       "competition": "Premier League · Matchweek 23",
       "label": null,
       "note": null
